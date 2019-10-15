@@ -1,0 +1,45 @@
+{% extends './base.html' %}
+{% block content %}
+<main>
+  <div class="row">
+    <div class="col-md-8 col-sm-8 blog-main">
+      <h3 class="mb-4 font-italic border-bottom">
+        New Question
+      </h3>
+    </div>
+
+  </div>
+    <div class="container-fluid">
+      <div class="row">
+      <div class="col-1">
+        Title
+      </div>
+      <div class="col-5">
+        <input class="form" type="text" placeholder="Your question" style="border-width: 4px; border-color: red;width: 80%">
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="col-1">
+        Text
+      </div>
+      <div class="col-5">
+        <textarea type="text" placeholder="Your text" style="border-width: 4px; border-color: red;width: 80%;height: 80px"></textarea>
+      </div>
+      </div>
+
+      <div class="row">
+      <div class="col-1">
+        Tags
+      </div>
+      <div class="col-5">
+        <input class="form" type="text" placeholder="Your tags" style="border-width: 4px; border-color: red;width: 80%">
+      </div>
+      </div>
+
+      <button class="btn btn-danger col-2 col-sm-1" type="submit" style="margin-left: 6%;margin-top: 2%">ASK!</button>
+
+      </div>
+</main>
+{% endblock %}
+

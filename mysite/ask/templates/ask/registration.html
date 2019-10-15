@@ -1,0 +1,62 @@
+{% extends './base.html' %}
+{% block content %}
+<main style="margin-top: 10%">
+<div class="container-fluid">
+	<div class="row">
+		<form class="form-horizontal" style="margin-left: 7%">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Registration</legend>
+
+<!-- Text input-->
+<div class="container-fluid">
+  <div class="row">
+  <label class="col-3 control-label" for="textinput">Name:</label>
+  <input name="textinput" class="form-control input-md col-5" id="textinput" type="text" placeholder="Name">
+  </div>
+</div>
+
+<!-- Password input-->
+<div class="container-fluid">
+  <div class="row">
+  <label class="col-3 control-label" for="passwordinput">Password:</label>
+    <input name="passwordinput" class="form-control input-md col-5" id="passwordinput" type="password" placeholder="Password">
+  </div>
+</div>
+
+  <div class="container-fluid">
+  <div class="row">
+  <label class="col-3 control-label" for="E-mail">E-mail:</label>
+    <input name="E-mail" class="form-control input-md col-5" id="E-mail" type="text" placeholder="E-mail">
+  </div>
+</div>
+
+
+
+
+
+
+<!-- File Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="filebutton">Upload CV</label>
+  <div class="col-md-4">
+    <input name="filebutton" class="input-file" id="filebutton" type="file">
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Submit</label>
+  <div class="col-md-4">
+    <button name="singlebutton" class="btn btn-primary" id="singlebutton">Button</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+	</div>
+</div>
+</main>
+{% endblock %}

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <title>ASK Oleg or not!</title>
+
+    <style>
+        .btn-group input {
+            padding: 10px 10px; /* Some padding */
+            height: 50px;
+            width: 60px;
+          /*float: left; /* Float the buttons side by side */
+        }
+
+        .btn-group button {
+          background-color: white; /* Green background */
+          border: 1px solid darkviolet; /* Green border */
+          color: black; /* White text */
+          cursor: pointer; /* Pointer/hand icon */
+          /*float: left; /* Float the buttons side by side */
+        }
+
+    /* Clear floats (clearfix hack) */
+    .btn-group button:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+ .btn-group:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    /* Add a background color on hover */
+    .btn-group button:hover {
+      /*background-color: darkviolet;*/
+    }
+</style>
+
+    <style>
+      main div{
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-danger" style="margin-bottom: 1%">
+    <h1><a class="navbar-brand col-3 col-sm-4 col-md-10" href="#">ASK Oleg</a></h1>
+    <form class="form-inline col-5 col-sm-5 col-md-5 col-lg-8 mr-sm-4 my-4 my-lg-2">
+      <input class="form-control col-6 col-sm-5 col-md-7 mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-success btn-lg col-6 col-sm-5 col-md-3" type="submit">ASK!</button>
+    </form>
+  <div class="col-3 col-sm-3 navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto col-5">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="30" height="30"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link col-sm-4"  href="#">{{user.username}}</a>
+      </li>
+      <li class="nav-item dropdown col-sm-4 ">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Abilities</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Settings</a>
+          <a class="dropdown-item" href="#">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+  <div class="col-3 blog-sidebar float-right" style="margin-top: 85px">
+
+      <div class="p-4 mb-8 bg-light rounded">
+        <h4 class="font-italic">Popular tags</h4>
+        <a href="#"><p class="mb-0" style="color: black">Python</p></a>
+        <a href="#"><p class="mb-0" style="color: black">C/C++</p></a>
+        <a href="#"><p class="mb-0" style="color: orange">Ruby</p></a>
+        <a href="#"><p class="mb-0" style="color: blueviolet">Data science</p></a>
+
+
+      </div>
+
+      <div class="p-4">
+        <h4 class="font-italic">Best members</h4>
+        <ol class="list-unstyled mb-0">
+          <li><a href="#">Username1</a></li>
+          <li><a href="#">Username2</a></li>
+          <li><a href="#">Username3</a></li>
+          <li><a href="#">Username4</a></li>
+          <li><a href="#">Username5</a></li>
+          <li><a href="#">Username6</a></li>
+          <li><a href="#">Username7</a></li>
+        </ol>
+      </div>
+    </div><!-- /.blog-sidebar -->
+
+<div style="margin-top: 1%">
+</div>
+{% block content %}
+{% endblock %}
+
+
+    <script src="/static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>

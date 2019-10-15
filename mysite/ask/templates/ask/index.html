@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <title>ASK Oleg or not!</title>
+
+    <style>
+        .btn-group input {
+            padding: 10px 10px; /* Some padding */
+            height: 50px;
+            width: 60px;
+          /*float: left; /* Float the buttons side by side */
+        }
+
+        .btn-group button {
+          background-color: white; /* Green background */
+          border: 1px solid darkviolet; /* Green border */
+          color: black; /* White text */
+          cursor: pointer; /* Pointer/hand icon */
+          /*float: left; /* Float the buttons side by side */
+        }
+
+    /* Clear floats (clearfix hack) */
+    .btn-group button:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+ .btn-group:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+    /* Add a background color on hover */
+    .btn-group button:hover {
+      /*background-color: darkviolet;*/
+    }
+</style>
+
+
+    <style>
+      main div{
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-danger">
+    <h1><a class="navbar-brand col-sm-10" href="#">ASK Oleg</a></h1>
+  <button class="navbar-toggler p-2 border-0" type="button" data-toggle="offcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <form class="form-inline col-sm-8 mr-sm-4 my-4 my-lg-2">
+      <input class="form-control col-sm-7 mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-success btn-lg col-sm-3 my-2 my-sm-0" type="submit">ASK!</button>
+    </form>
+  <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="30" height="30"></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link col-sm-4"  href="#">Username</a>
+      </li>
+      <li class="nav-item dropdown col-sm-4 ">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Abilities</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">Settings</a>
+          <a class="dropdown-item" href="#">Logout</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+  <div class="col-3 blog-sidebar float-right" style="margin-top: 85px">
+
+      <div class="p-4 mb-8 bg-light rounded">
+        <h4 class="font-italic">Popular tags</h4>
+        <a href="#"><p class="mb-0" style="color: black">Python</p></a>
+        <a href="#"><p class="mb-0" style="color: black">C/C++</p></a>
+        <a href="#"><p class="mb-0" style="color: orange">Ruby</p></a>
+        <a href="#"><p class="mb-0" style="color: blueviolet">Data science</p></a>
+
+
+      </div>
+
+      <div class="p-4">
+        <h4 class="font-italic">Best members</h4>
+        <ol class="list-unstyled mb-0">
+          <li><a href="#">Username1</a></li>
+          <li><a href="#">Username2</a></li>
+          <li><a href="#">Username3</a></li>
+          <li><a href="#">Username4</a></li>
+          <li><a href="#">Username5</a></li>
+          <li><a href="#">Username6</a></li>
+          <li><a href="#">Username7</a></li>
+        </ol>
+      </div>
+    </div><!-- /.blog-sidebar -->
+
+  <main role="main" class="container-fluid m-5">
+
+  <div class="row">
+    <div class="col-md-8 col-sm-8 blog-main">
+      <h3 class="mb-4 font-italic border-bottom">
+        New Questions
+      <a style="color: #c82333" href="#">Hot Questions</a>
+      </h3>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 0px">
+
+      <div class="row">
+        <div class="col col-2" style="border: 3px solid red;border-right: none">
+         <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
+
+          <div class="btn-group" style="margin-left: 10px">
+              <div><input type="number" id="myNumber1"></div>
+          <div class="btn-group-vertical">
+            <button onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 60px;" onclick="myFunction1('myNumber1')">Like</button>
+            <button onmouseover="this.style.backgroundColor='red'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 60px;" onclick="myFunction2('myNumber1')">Dislike</button>
+          </div>
+        </div>
+        </div>
+        <div class="col col-7" style="border: 3px solid red;">
+        <div class="blog-post">
+        <h2><a style="color: darkviolet" href="#">What is the color of the stars?</a></h2>
+        <p class="blog-post-meta">January 1, 2014 by
+          <a href="#">Mark</a>
+        </p>
+
+
+        <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+        <hr>
+
+        <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+        <blockquote>
+        </blockquote>
+          <hr>
+            <p> <a href="#">Answers(count)</a> Tags:<a href="#">(Tag1)</a><a href="#">(Tag2)</a></p>
+      </div><!-- /.blog-post -->
+</div>
+
+
+        </div>
+ </div>
+
+
+
+
+ <div class="container-fluid" style="margin-top: 1px">
+
+      <div class="row">
+        <div class="col col-2" style="border: 3px solid red;border-right: none">
+         <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
+
+          <div class="btn-group" style="margin-left: 10px">
+              <div><input type="number" id="myNumber2"></div>
+          <div class="btn-group-vertical">
+            <button onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 60px" onclick="myFunction1('myNumber2')">Like</button>
+            <button onmouseover="this.style.backgroundColor='red'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 60px" onclick="myFunction2('myNumber2')">Dislike</button>
+          </div>
+
+
+
+        </div>
+        </div>
+        <div class="col col-7" style="border: 3px solid red;">
+        <div class="blog-post">
+        <h2><a style="color: darkviolet" href="#">What is the color of the stars?</a></h2>
+        <p class="blog-post-meta">January 1, 2014 by
+          <a href="#">Mark</a>
+        </p>
+
+
+        <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
+        <hr>
+
+        <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+        <blockquote>
+        </blockquote>
+          <hr>
+            <p> <a href="#">Answers(count)</a> Tags:<a href="#">(Tag1)</a><a href="#">(Tag2)</a></p>
+      </div><!-- /.blog-post -->
+</div>
+      </div>
+    <div class="container-fluid">
+     <nav class="blog-pagination" style="margin-top: 1px;margin-left:0px">
+        <a class="btn btn-outline-primary" href="#">Older</a>
+        <a class="btn btn-outline-secondary" href="#" tabindex="-1" aria-disabled="true">Newer</a>
+      </nav>
+    </div>
+
+
+</main><!-- /.container -->
+
+
+
+  <script>
+      function myFunction1(str) {
+          document.getElementById(str).stepUp(1);
+      }
+      function myFunction2(str) {
+          document.getElementById(str).stepDown(1);
+      }
+  </script>
+
+    <script src="/static/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+  </body>
+</html>
