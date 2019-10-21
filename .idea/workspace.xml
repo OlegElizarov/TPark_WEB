@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -184,7 +184,8 @@
       <workItem from="1571076639568" duration="8833000" />
       <workItem from="1571137289039" duration="12301000" />
       <workItem from="1571236917907" duration="6000" />
-      <workItem from="1571657376894" duration="2726000" />
+      <workItem from="1571657376894" duration="2869000" />
+      <workItem from="1571685581172" duration="3102000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
@@ -193,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571659958732</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="best templates">
+      <created>1571660319201</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571660319201</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
