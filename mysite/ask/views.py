@@ -1,7 +1,11 @@
 from django.views import generic
 from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponse
 
 
+questions={}
+for i in range(20):
+    questions[i]={'id':i,'title':f'question#{i}'}
 
 class IndexView(generic.ListView):
     template_name = 'ask/index.html'
@@ -44,6 +48,7 @@ def tag(request, tag_name):
     return render(
         request,
         'ask/tag.html',{
+            'questions':questions.values(),
             'tag_name':tag_name,
         }
     )

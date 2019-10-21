@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="first templates" />
+    <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="first templates">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/registration/login.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,9 +73,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../env/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mysite/site33" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -176,7 +185,9 @@
       <workItem from="1571049487564" duration="4991000" />
       <workItem from="1571060076801" duration="2619000" />
       <workItem from="1571076639568" duration="8833000" />
-      <workItem from="1571137289039" duration="6452000" />
+      <workItem from="1571137289039" duration="12301000" />
+      <workItem from="1571236917907" duration="6000" />
+      <workItem from="1571657376894" duration="2465000" />
     </task>
     <servers />
   </component>

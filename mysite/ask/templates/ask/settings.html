@@ -3,18 +3,18 @@
 <main>
   <div class="row">
     <div class="col-md-8 col-sm-8 blog-main">
-      <h3 class="mb-4 font-italic border-bottom">
+      <h3 class="mb-4 font-italic border-bottom" style="margin-left: 8%">
         Settings: {{user.username}}
       </h3>
     </div>
 
   </div>
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-left: 4%">
       <div class="row">
       <div class="col-1">
         Login
       </div>
-      <div class="col-5">
+      <div class="col-5" style="margin-left: 3%">
         <input class="form" type="text" value={{user.id}}{{user.username}} style="border-width: 4px; border-color: red;width: 80%">
       </div>
       </div>
@@ -23,8 +23,8 @@
       <div class="col-1">
         Email
       </div>
-      <div class="col-5">
-        <input type="text" value="{{user.email}}"  style="border-width: 4px; border-color: red;width: 80%;height: 80px"></input>
+      <div class="col-5" style="margin-left: 3%">
+        <input type="text" value="{{user.email}}"  style="border-width: 4px; border-color: red;width: 80%;height: 40px"></input>
       </div>
       </div>
 
@@ -32,7 +32,7 @@
       <div class="col-1">
         NickName
       </div>
-      <div class="col-5">
+      <div class="col-5" style="margin-left: 3%">
         <input class="form" type="text" value={{user.username}} style="border-width: 4px; border-color: red;width: 80%">
       </div>
       </div>
@@ -40,15 +40,16 @@
       <div class="row">
        <div class="col-5">
         UploadPhoto
-        <img src="/static/img/fffzRA7cwYA.jpg" width="400" height="350" style="margin-left: 9%">
-         <form style="margin-left: 20%;margin-top: 3%">
+        <img src="/static/img/fffzRA7cwYA.jpg" width="390" height="350" style="margin-left: 4%">
+         <form style="margin-left: 21%;margin-top: 3%">
           <input type="file" name="pic" accept="image/*">
-          <input type="submit">
+           <br>
+          <input type="submit" style="margin-top: 3%">
          </form>
       </div>
       </div>
 
-      <button class="btn btn-danger col-sm-1" type="submit" style="margin-left: 6%;margin-top: 2%; margin-bottom: 3%">Save!</button>
+      <button class="btn btn-danger col-sm-1" type="submit" style="margin-left: 8%;margin-top: 2%; margin-bottom: 3%">Save!</button>
 
       </div>
 </main>

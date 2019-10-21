@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <title>ASK Oleg or not!</title>
 
     <style>
@@ -63,9 +65,15 @@
       <li class="nav-item">
         <a class="nav-link" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="30" height="30"></a>
       </li>
+      {% if user.is_authenticated %}
       <li class="nav-item">
         <a class="nav-link col-sm-4"  href="#">{{user.username}}</a>
       </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link col-sm-4"  href="#">uusername</a>
+      </li>
+  {% endif%}
       <li class="nav-item dropdown col-sm-4 ">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Abilities</a>
