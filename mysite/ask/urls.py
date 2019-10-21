@@ -4,7 +4,7 @@ from ask import views
 app_name = "ask"
 
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
+    url(r'^$', views.index, name='index'),
     url(r'^base$', views.BaseView.as_view(), name='base'),
     url(r'^ask', views.AView.as_view(), name='ask'),
     url(r'^question/(?P<pk>\d+)/$', views.QView.as_view(), name='question'),

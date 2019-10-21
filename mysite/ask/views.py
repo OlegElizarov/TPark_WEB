@@ -1,17 +1,27 @@
 from django.views import generic
 from django.shortcuts import get_object_or_404, render
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 
-
-questions={}
+questions = {}
 for i in range(20):
-    questions[i]={'id':i,'title':f'question#{i}'}
+    questions[i] = {'id': i, 'title': f'question#{i}'}
 
-class IndexView(generic.ListView):
-    template_name = 'ask/index.html'
 
-    def get_queryset(self):
-        pass
+
+def index(request):
+    paginator = Paginator(list(questions.items()), 5)  # Show 25 contacts per page
+    page = request.GET.get('page')
+    contacts = paginator.get_page(page)
+    return render(
+        request,
+        'ask/index.html',{
+            'questions':list(questions.values()),
+            'contacts': contacts,
+        }
+    )
+
+
 
 class BaseView(generic.ListView):
     template_name = 'ask/base.html'
