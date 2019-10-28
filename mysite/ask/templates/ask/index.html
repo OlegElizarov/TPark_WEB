@@ -14,24 +14,24 @@
 
 {% for contact in contacts %}
     <div class="container-fluid" style="margin-top: 0px">
-
       <div class="row">
         <div class="col col-2" style="border: 3px solid red;border-right: none">
          <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
 
            <div class="btn-group" style="margin-top: 10%">
-              <div><input class="inputer" style="width: 60px" type="number" id={{contact.0}} ></div>
+              <div><input class="inputer" style="width: 60px" type="number" id={{contact.id}} ></div>
           <div class="btn-group-vertical" style="margin-right: 50px">
+
             <button onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ;
-                    style="height: 25px; width: 90%;" onclick="myFunction1({{contact.0}})">▲</button>
+                    style="height: 25px; width: 90%;" onclick="myFunction1({{contact.id}})">▲</button>
             <button onmouseover="this.style.backgroundColor='red'"; onmouseout="this.style.backgroundColor='white'" ;
-                    style="height: 25px; width: 90%;" onclick="myFunction2({{contact.0}})">▼</button>
+                    style="height: 25px; width: 90%;" onclick="myFunction2({{contact.id}})">▼</button>
           </div>
         </div>
         </div>
         <div class="col col-7" style="border: 3px solid red;">
         <div class="blog-post">
-        <h2><a style="color: darkviolet" href="#">What is the color of the stars? {{contact.0}} {{contact.1.title}}</a></h2>
+        <h2><a style="color: darkviolet" href="#">What is the color of the stars?  {{contact.title}}</a></h2>
         <p class="blog-post-meta">January 1, 2014 by
           <a href="#">Mark</a>
         </p>
@@ -64,20 +64,15 @@
 
 
 
-    <div class="container-fluid">
-     <nav class="blog-pagination" style="margin-top: 1px;margin-left:0px">
-        <a class="btn btn-outline-primary" href="#">Older</a>
-        <a class="btn btn-outline-secondary" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-      </nav>
-    </div>
+
 
 
 
 <div class="pagination">
     <span class="step-links">
         {% if contacts.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ contacts.previous_page_number }}">previous</a>
+            <a class="btn btn-outline-primary" href="?page=1">&laquo; first</a>
+            <a class="btn btn-outline-primary" href="?page={{ contacts.previous_page_number }}">previous</a>
         {% endif %}
 
         <span class="current">
@@ -85,12 +80,13 @@
         </span>
 
         {% if contacts.has_next %}
-            <a href="?page={{ contacts.next_page_number }}">next</a>
-            <a href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
+            <a class="btn btn-outline-danger" href="?page={{ contacts.next_page_number }}">next</a>
+            <a class="btn btn-outline-danger" href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
     </span>
 </div>
 
 
   </div>
+  </main>
 {% endblock %}

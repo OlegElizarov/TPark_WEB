@@ -2,15 +2,23 @@ from django.views import generic
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
+from ask import models
 
 questions = {}
 for i in range(20):
     questions[i] = {'id': i, 'title': f'question#{i}'}
 
+def tag(request, tag_name):
+    return render(
+        request,
+        'ask/tag.html',{
+            'questions':questions.values(),
+            'tag_name': tag_name,        }
+    )
 
 
 def index(request):
-    paginator = Paginator(list(questions.items()), 5)  # Show 25 contacts per page
+    paginator = Paginator(list(questions.values()), 5)  # Show 25 contacts per page
     page = request.GET.get('page')
     contacts = paginator.get_page(page)
     return render(
@@ -54,11 +62,11 @@ class RView(generic.ListView):
         pass
 
 
-def tag(request, tag_name):
-    return render(
-        request,
-        'ask/tag.html',{
-            'questions':questions.values(),
-            'tag_name':tag_name,
-        }
-    )
+#def tag(request, tag_name):
+#    return render(
+#        request,
+#        'ask/tag.html',{
+#            'questions':questions.values(),
+#            'tag_name':tag_name,
+#        }
+#    )
