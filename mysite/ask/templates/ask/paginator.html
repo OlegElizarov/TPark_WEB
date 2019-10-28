@@ -1,17 +1,17 @@
 <div class="pagination">
     <span class="step-links">
-        {% if contacts.has_previous %}
+        {% if question_list.has_previous %}
             <a class="btn btn-outline-primary" href="?page=1">&laquo; first</a>
-            <a class="btn btn-outline-primary" href="?page={{ contacts.previous_page_number }}">previous</a>
+            <a class="btn btn-outline-primary" href="?page={{ question_list.previous_page_number }}">previous</a>
         {% endif %}
 
         <span class="current">
-            Page {{ contacts.number }} of {{ contacts.paginator.num_pages }}.
+            Page {{ question_list.number }} of {{ question_list.paginator.num_pages }}.
         </span>
 
-        {% if contacts.has_next %}
-            <a class="btn btn-outline-danger" href="?page={{ contacts.next_page_number }}">next</a>
-            <a class="btn btn-outline-danger" href="?page={{ contacts.paginator.num_pages }}">last &raquo;</a>
+        {% if question_list.has_next %}
+            <a class="btn btn-outline-danger" href="?page={{ question_list.next_page_number }}">next</a>
+            <a class="btn btn-outline-danger" href="?page={{ question_list.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
     </span>
 </div>

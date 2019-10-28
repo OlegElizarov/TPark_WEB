@@ -20,12 +20,12 @@ def tag(request, tag_name):
 def index(request):
     paginator = Paginator(list(questions.values()), 5)  # Show 25 contacts per page
     page = request.GET.get('page')
-    contacts = paginator.get_page(page)
+    question_list = paginator.get_page(page)
     return render(
         request,
         'ask/index.html',{
             'questions':list(questions.values()),
-            'contacts': contacts,
+            'question_list': question_list,
         }
     )
 
