@@ -20,18 +20,27 @@ def tag(request, tag_name):
 
 
 def index(request):
-    paginator = Paginator(list(questions.values()), 5)  # Show 25 contacts per page
+    q=Question.objects.all()
+    paginator = Paginator(q, 2)  # Show 25 contacts per page
     page = request.GET.get('page')
     question_list = paginator.get_page(page)
     return render(
         request,
         'ask/index.html',{
-            'questions':list(questions.values()),
             'question_list': question_list,
         }
     )
 
-
+def question(request,question_id):
+    q = get_object_or_404(Question, pk=question_id)
+    a = q.answer_set.all()
+    return render(
+        request,
+        'ask/question.html',{
+            'question': q,
+            'answer_list': a,
+        }
+    )
 
 class BaseView(generic.ListView):
     template_name = 'ask/base.html'

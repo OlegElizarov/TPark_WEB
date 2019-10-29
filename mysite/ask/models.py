@@ -20,11 +20,14 @@ class Question(models.Model):
         verbose_name_plural = 'Вопросы'
 
 class Answer(models.Model):
+    author = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True, blank=True)
     title = models.CharField(max_length=255)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     text = models.TextField()
     rating = models.IntegerField(default=0)
     correct = models.BooleanField()
+    pub_date = models.DateTimeField('date published')
 
     def __str__(self):
         return self.title

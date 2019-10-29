@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
     </list>
@@ -214,7 +215,7 @@
       <workItem from="1571657376894" duration="2869000" />
       <workItem from="1571685581172" duration="7808000" />
       <workItem from="1571742900407" duration="11385000" />
-      <workItem from="1572282444260" duration="8311000" />
+      <workItem from="1572282444260" duration="10538000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
@@ -279,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572287679904</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="first models in tags">
+      <created>1572354015867</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572354015867</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +310,8 @@
     <MESSAGE value="best templates" />
     <MESSAGE value="i am afraid" />
     <MESSAGE value="Login+logout+paginator_base" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login+logout+paginator_base" />
+    <MESSAGE value="first models in tags" />
+    <option name="LAST_COMMIT_MESSAGE" value="first models in tags" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TPark_WEB$tests.coverage" NAME="tests Coverage Results" MODIFIED="1571087032133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite/ask" />
