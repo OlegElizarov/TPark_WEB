@@ -91,11 +91,9 @@
 
       <div class="p-4 mb-8 bg-light rounded">
         <h4 class="font-italic">Popular tags</h4>
-        <a href="#"><p class="mb-0" style="color: black">Python</p></a>
-        <a href="#"><p class="mb-0" style="color: black">C/C++</p></a>
-        <a href="#"><p class="mb-0" style="color: orange">Ruby</p></a>
-        <a href="#"><p class="mb-0" style="color: blueviolet">Data science</p></a>
-
+        {% for tag in tags %}
+        <a href="#"><p class="mb-0" style="color: {{tag.color}}"> {{tag.name}}</p></a>
+        {% endfor %}
 
       </div>
 

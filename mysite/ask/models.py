@@ -4,6 +4,19 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
 
+
+class Tag (models.Model):
+    name = models.CharField(max_length=15)
+    color = models.CharField(max_length = 15)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Тег'
+        verbose_name_plural = 'Теги'
+
+
 class Question(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
@@ -11,6 +24,7 @@ class Question(models.Model):
         User, on_delete=models.SET_NULL, null=True, blank=True)
     pub_date = models.DateTimeField('date published')
     rating = models.IntegerField(default=0)
+    tags = models.ManyToManyField(Tag)
 
     def __str__(self):
         return self.title
@@ -36,13 +50,11 @@ class Answer(models.Model):
         verbose_name = 'Ответ'
         verbose_name_plural = 'Ответы'
 
-
-
+"""
 class ArticleManager(models.Manager):
     def published(self):
         return self.filter(id=2).first()
 
-"""
 class Author(models.Model):
     name = models.CharField(max_length=255,verbose_name='Имя')
     rating = models.IntegerField(default=0)

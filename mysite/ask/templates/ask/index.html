@@ -42,7 +42,11 @@
             <blockquote>
             </blockquote>
           <hr>
-            <p> <a href="#">Answers(count)</a> Tags:<a href="#">(Tag1)</a><a href="#">(Tag2)</a></p>
+            <p> <a href="#">Answers({{question.answer_set.count}})</a> Tags:
+                {% for tag in question.tags.all%}
+                <a href="#" style="color: {{tag.color}} ">({{tag.name}})</a>
+            {% endfor%}
+            </p>
       </div><!-- /.blog-post -->
 </div>
         </div>

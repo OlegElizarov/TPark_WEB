@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 from ask import models
-from ask.models import Question, Answer
+from ask.models import Question, Answer,Tag
 
 questions = {}
 for i in range(20):
@@ -11,16 +11,20 @@ for i in range(20):
 
 def tag(request, tag_name):
     q=Question.objects.all()
+    t=Tag.objects.all()
     return render(
         request,
         'ask/tag.html',{
             'questions_list':q,
-            'tag_name': tag_name,        }
+            'tag_name': tag_name,
+            'tags':t,
+        }
     )
 
 
 def index(request):
     q=Question.objects.all()
+    t=Tag.objects.all()
     paginator = Paginator(q, 2)  # Show 25 contacts per page
     page = request.GET.get('page')
     question_list = paginator.get_page(page)
@@ -28,17 +32,20 @@ def index(request):
         request,
         'ask/index.html',{
             'question_list': question_list,
+            'tags':t,
         }
     )
 
 def question(request,question_id):
     q = get_object_or_404(Question, pk=question_id)
     a = q.answer_set.all()
+    t=Tag.objects.all()
     return render(
         request,
         'ask/question.html',{
             'question': q,
             'answer_list': a,
+            'tags':t,
         }
     )
 
