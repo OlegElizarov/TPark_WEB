@@ -10,7 +10,7 @@
       Tag:{{ tag_name }}
       </h3>
     </div>
-
+{% for question in questions_list %}
     <div class="container-fluid" style="margin-top: 0px">
 
       <div class="row">
@@ -18,95 +18,33 @@
          <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
 
           <div class="btn-group" style="margin-top: 10%">
-              <div><input style="width: 60px" type="number" id="myNumber1"></div>
+              <div><input style="width: 60px" type="number" id={{question.id}}></div>
           <div class="btn-group-vertical" style="margin-right: 50px">
-            <button onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 90%;" onclick="myFunction1('myNumber1')">▲</button>
-            <button onmouseover="this.style.backgroundColor='red'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 90%;" onclick="myFunction2('myNumber1')">▼</button>
+            <button onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 90%;" onclick="myFunction1({{question.id}})">▲</button>
+            <button onmouseover="this.style.backgroundColor='red'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 90%;" onclick="myFunction2({{question.id}})">▼</button>
           </div>
         </div>
         </div>
         <div class="col col-7" style="border: 3px solid red;">
         <div class="blog-post">
-        <h2><a style="color: darkviolet" href="#">What is the color of the stars?</a></h2>
+        <h2><a style="color: darkviolet" href="#">{{question.title}}</a></h2>
         <p class="blog-post-meta">January 1, 2014 by
           <a href="#">Mark</a>
         </p>
-
-
-        <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-        <hr>
-
-        <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-        <blockquote>
-        </blockquote>
+            {{question.text}}
           <hr>
             <p> <a href="#">Answers(count)</a> Tags:<a href="#">{{tag_name}}</a>
-      </div><!-- /.blog-post -->
-</div>
-
-
+        </div><!-- /.blog-post -->
         </div>
+      </div>
  </div>
 
 
 
-
- <div class="container-fluid" style="margin-top: 1px">
-
-      <div class="row">
-        <div class="col col-2" style="border: 3px solid red;border-right: none">
-         <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
-
-          <div class="btn-group" style="margin-left: 10px">
-              <div><input type="number" id="myNumber2"></div>
-          <div class="btn-group-vertical">
-            <button onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 90%;" onclick="myFunction1('myNumber2')">▲</button>
-            <button onmouseover="this.style.backgroundColor='red'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 90%;" onclick="myFunction2('myNumber2')">▼</button>
-          </div>
-
-
-
-        </div>
-        </div>
-        <div class="col col-7" style="border: 3px solid red;">
-        <div class="blog-post">
-        <h2><a style="color: darkviolet" href="#">What is the color of the stars?</a></h2>
-        <p class="blog-post-meta">January 1, 2014 by
-          <a href="#">Mark</a>
-        </p>
-
-
-        <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.</p>
-        <hr>
-
-        <p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-        <blockquote>
-        </blockquote>
-          <hr>
-            <p> <a href="#">Answers(count)</a> Tags:<a href="#">{{tag_name}}</a>
-      </div><!-- /.blog-post -->
-</div>
-      </div>
-
-    <div class="container-fluid">
-     <nav class="blog-pagination" style="margin-top: 1px;margin-left:0px">
-        <a class="btn btn-outline-primary" href="#">Older</a>
-        <a class="btn btn-outline-secondary" href="#" tabindex="-1" aria-disabled="true">Newer</a>
-      </nav>
-    </div>
-
-
+{% endfor %}
+  </div>
 </main><!-- /.container -->
 
-
-  <script>
-      function myFunction1(str) {
-          document.getElementById(str).stepUp(1);
-      }
-      function myFunction2(str) {
-          document.getElementById(str).stepDown(1);
-      }
-  </script>
 
 
 {% endblock %}

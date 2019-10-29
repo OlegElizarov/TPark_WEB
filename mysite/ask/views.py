@@ -3,16 +3,18 @@ from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 from ask import models
+from ask.models import Question, Answer
 
 questions = {}
 for i in range(20):
     questions[i] = {'id': i, 'title': f'question#{i}'}
 
 def tag(request, tag_name):
+    q=Question.objects.all()
     return render(
         request,
         'ask/tag.html',{
-            'questions':questions.values(),
+            'questions_list':q,
             'tag_name': tag_name,        }
     )
 
