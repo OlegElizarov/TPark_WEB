@@ -5,7 +5,7 @@ app_name = "ask"
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^base$', views.BaseView.as_view(), name='base'),
+    url(r'^base$', views.base, name='base'),
     url(r'^ask', views.AView.as_view(), name='ask'),
     url(r'^question/(?P<question_id>\d+)/$', views.question, name='question'),
     url(r'^tag/(?P<tag_name>\w+)/$', views.tag, name='tag'),

@@ -21,7 +21,7 @@
          <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
 
            <div class="btn-group" style="margin-top: 10%">
-              <div><input class="inputer" style="width: 60px" type="number" id={{question.id}} ></div>
+              <div><input class="inputer" style="width: 60px" type="number" id={{question.id}} value={{question.rating}}></div>
           <div class="btn-group-vertical" style="margin-right: 50px">
 
              <button onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ;
@@ -34,7 +34,7 @@
         </div>
         <div class="col col-7" style="border: 3px solid;border-color:darkviolet">
         <div class="blog-post">
-        <h2><a style="color: darkviolet" href="#">{{question.title}}</a></h2>
+        <h2><a style="color: darkviolet" href="{% url 'ask:question' question.id %}">{{question.title}}</a></h2>
         <p class="blog-post-meta">{{question.pub_date}}
           <a href="#">{{question.author}}</a>
         </p>
@@ -42,9 +42,9 @@
             <blockquote>
             </blockquote>
           <hr>
-            <p> <a href="#">Answers({{question.answer_set.count}})</a> Tags:
+            <p> <a href="{% url 'ask:question' question.id %}">Answers({{question.answer_set.count}})</a> Tags:
                 {% for tag in question.tags.all%}
-                <a href="#" style="color: {{tag.color}} ">({{tag.name}})</a>
+                <a href="{% url 'ask:tag' tag.name %}" style="color: {{tag.color}} ">({{tag.name}})</a>
             {% endfor%}
             </p>
       </div><!-- /.blog-post -->

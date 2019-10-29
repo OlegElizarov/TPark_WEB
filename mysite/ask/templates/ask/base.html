@@ -55,7 +55,7 @@
 
   <body>
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-danger" style="margin-bottom: 1%">
-    <h1><a class="navbar-brand col-3 col-sm-4 col-md-10" href="#">ASK fm</a></h1>
+    <h1><a class="navbar-brand col-3 col-sm-4 col-md-10" href="{% url 'ask:index' %}">ASK fm</a></h1>
     <form class="form-inline col-5 col-sm-5 col-md-5 col-lg-8 mr-sm-4 my-4 my-lg-2">
       <input class="form-control col-6 col-sm-5 col-md-7 mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-success btn-lg col-6 col-sm-5 col-md-3" type="submit">ASK!</button>
@@ -67,7 +67,7 @@
       </li>
       {% if user.is_authenticated %}
       <li class="nav-item">
-        <a class="nav-link col-sm-4"  href="#">{{user.username}}</a>
+        <a class="nav-link col-sm-4"  href="{% url 'ask:settings' %}">{{user.username}}</a>
       </li>
       {% else %}
       <li class="nav-item">
@@ -92,11 +92,12 @@
       <div class="p-4 mb-8 bg-light rounded">
         <h4 class="font-italic">Popular tags</h4>
         {% for tag in tags %}
-        <a href="#"><p class="mb-0" style="color: {{tag.color}}"> {{tag.name}}</p></a>
+        <a href="{% url 'ask:tag' tag.name %}" ><p class="mb-0" style="color: {{tag.color}}"> {{tag.name}}</p></a>
         {% endfor %}
 
       </div>
 
+    <div>
       <div class="p-4">
         <h4 class="font-italic">Best members</h4>
         <ol class="list-unstyled mb-0">
@@ -109,6 +110,8 @@
           <li><a href="#">Username7</a></li>
         </ol>
       </div>
+    </div>
+
     </div><!-- /.blog-sidebar -->
 
 <div style="margin-top: 1%">

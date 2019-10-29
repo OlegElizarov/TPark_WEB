@@ -10,7 +10,7 @@ for i in range(20):
     questions[i] = {'id': i, 'title': f'question#{i}'}
 
 def tag(request, tag_name):
-    q=Question.objects.all()
+    q=Question.objects.filter(tags__name__contains=tag_name)
     t=Tag.objects.all()
     return render(
         request,
@@ -49,11 +49,14 @@ def question(request,question_id):
         }
     )
 
-class BaseView(generic.ListView):
-    template_name = 'ask/base.html'
-
-    def get_queryset(self):
-        pass
+def base(request):
+    t=Tag.objects.all()
+    return render(
+        request,
+        'ask/base.html',{
+            'tags':t,
+        }
+    )
 
 class AView(generic.ListView):
     template_name = 'ask/ask.html'

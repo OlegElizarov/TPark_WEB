@@ -33,7 +33,11 @@
         </p>
             {{question.text}}
           <hr>
-            <p> <a href="#">Answers(count)</a> Tags:<a href="#">{{tag_name}}</a>
+            <p> <a href="#">Answers({{question.answer_set.count}})</a> Tags:
+                {% for tag in question.tags.all%}
+                <a href="{% url 'ask:tag' tag.name %}" style="color: {{tag.color}} ">({{tag.name}})</a>
+            {% endfor%}
+            </p>
         </div><!-- /.blog-post -->
         </div>
       </div>
