@@ -27,13 +27,16 @@
         <div class="blog-post">
         <h2><a style="color: darkviolet" href="#">{{question.title}}</a></h2>
         <p class="blog-post-meta">{{question.pub_date}}
-          <a href="#">{{question.author}}</a>
+          <a href="{% url 'ask:settings' %}">{{question.author}}</a>
         </p>
             {{question.text}}
         <blockquote>
         </blockquote>
           <hr>
-            <p>Tags:<a href="#">(Tag1)</a><a href="#">(Tag2)</a></p>
+
+{% for tag in question.tags.all%}
+                <a href="{% url 'ask:tag' tag.name %}" style="color: {{tag.color}} ">({{tag.name}})</a>
+            {% endfor%}
             <hr>
       </div><!-- /.blog-post -->
 </div>
@@ -55,7 +58,7 @@
         <div class="blog-post" style="margin-top: 0%">
         <h2><a style="color: darkviolet" href="#">{{answer.title}}</a></h2>
         <p class="blog-post-meta"> {{answer.pub_date}}
-          <a href="#">{{answer.author}}</a>
+          <a href="{% url 'ask:settings' %}">{{answer.author}}</a>
         </p>
 {{answer.text}}
             <blockquote>

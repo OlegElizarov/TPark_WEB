@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TPark_WEB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TPark_WEB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/settings.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
     </list>
@@ -16,6 +22,43 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - db.sqlite3" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - db.sqlite3" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - db.sqlite3" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="SQLite - db.sqlite3" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+        <item name="auth_user: table" type="3d80ac25:SqliteImplModel$Table" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -39,7 +82,9 @@
   <component name="ProjectId" id="1SAG9nAguQM6xTkb8IK4c590MEp" />
   <component name="PropertiesComponent">
     <property name="ChangesTree.GroupingKeys" value="" />
+    <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/mysite/ask/templates/ask" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -48,6 +93,15 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="SQL Dialects" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="TPark_WEB" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="TPark_WEB" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -67,7 +121,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.manage">
+  <component name="RunManager" selected="Python.models">
     <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="TPark_WEB" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,6 +136,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mysite/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="TPark_WEB" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/../env/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mysite/ask" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mysite/ask/models.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,15 +260,27 @@
       <item itemvalue="Python.tests" />
       <item itemvalue="Python.settings" />
       <item itemvalue="Python.manage" />
+      <item itemvalue="Python.models" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.models" />
         <item itemvalue="Python.manage" />
         <item itemvalue="Python.settings" />
         <item itemvalue="Python.tests" />
         <item itemvalue="Python.views (1)" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="allServicesViewState">
+      <serviceView>
+        <treeState>
+          <expand />
+          <select />
+        </treeState>
+      </serviceView>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -217,7 +305,10 @@
       <workItem from="1571685581172" duration="7808000" />
       <workItem from="1571742900407" duration="11385000" />
       <workItem from="1572282444260" duration="11766000" />
-      <workItem from="1572380678975" duration="4225000" />
+      <workItem from="1572380678975" duration="4301000" />
+      <workItem from="1572419219384" duration="1423000" />
+      <workItem from="1572469374829" duration="596000" />
+      <workItem from="1572543670906" duration="3254000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
@@ -303,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572382276076</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="ready to cut everything on template_bites+need rating button searcher">
+      <created>1572385233446</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572385233446</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,13 +427,15 @@
     <MESSAGE value="first models in tags" />
     <MESSAGE value="questions+tags(without tags model)+index with models" />
     <MESSAGE value="correct tags and answers" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct tags and answers" />
+    <MESSAGE value="ready to cut everything on template_bites+need rating button searcher" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready to cut everything on template_bites+need rating button searcher" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TPark_WEB$tests.coverage" NAME="tests Coverage Results" MODIFIED="1571087032133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite/ask" />
     <SUITE FILE_PATH="coverage/TPark_WEB$manage.coverage" NAME="manage Coverage Results" MODIFIED="1571759777277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite" />
     <SUITE FILE_PATH="coverage/TPark_WEB$views__1_.coverage" NAME="views (1) Coverage Results" MODIFIED="1571085174912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite/ask" />
     <SUITE FILE_PATH="coverage/TPark_WEB$settings.coverage" NAME="settings Coverage Results" MODIFIED="1571087070782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite/site33" />
+    <SUITE FILE_PATH="coverage/TPark_WEB$models.coverage" NAME="models Coverage Results" MODIFIED="1572469467791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite/ask" />
     <SUITE FILE_PATH="coverage/TPark_WEB$views.coverage" NAME="views Coverage Results" MODIFIED="1571689179865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite/ask" />
   </component>
 </project>

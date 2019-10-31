@@ -12,12 +12,15 @@ for i in range(20):
 def tag(request, tag_name):
     q=Question.objects.filter(tags__name__contains=tag_name)
     t=Tag.objects.all()
+    paginator = Paginator(q, 2)  # Show 1 contacts per page
+    page = request.GET.get('page')
+    question_list = paginator.get_page(page)
     return render(
         request,
         'ask/tag.html',{
-            'questions_list':q,
             'tag_name': tag_name,
             'tags':t,
+            'question_list': question_list,
         }
     )
 
@@ -25,7 +28,7 @@ def tag(request, tag_name):
 def index(request):
     q=Question.objects.all()
     t=Tag.objects.all()
-    paginator = Paginator(q, 2)  # Show 25 contacts per page
+    paginator = Paginator(q, 2)  # Show 2 contacts per page
     page = request.GET.get('page')
     question_list = paginator.get_page(page)
     return render(

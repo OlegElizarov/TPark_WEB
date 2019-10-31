@@ -87,7 +87,7 @@
 </nav>
 
 
-  <div class="col-3 blog-sidebar float-right" style="margin-top: 85px">
+  <div class="col-3 blog-sidebar float-right" style="margin-top: 85px;min-height: 500px">
 
       <div class="p-4 mb-8 bg-light rounded">
         <h4 class="font-italic">Popular tags</h4>
@@ -101,13 +101,8 @@
       <div class="p-4">
         <h4 class="font-italic">Best members</h4>
         <ol class="list-unstyled mb-0">
-          <li><a href="#">Username1</a></li>
-          <li><a href="#">Username2</a></li>
-          <li><a href="#">Username3</a></li>
-          <li><a href="#">Username4</a></li>
-          <li><a href="#">Username5</a></li>
-          <li><a href="#">Username6</a></li>
-          <li><a href="#">Username7</a></li>
+          <li><a href="{% url 'ask:settings' %}">{{user.username}}</a></li>
+
         </ol>
       </div>
     </div>
