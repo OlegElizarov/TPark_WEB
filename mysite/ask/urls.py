@@ -9,7 +9,7 @@ urlpatterns = [
     url(r'^ask', views.ask, name='ask'),
     url(r'^question/(?P<question_id>\d+)/$', views.question, name='question'),
     url(r'^tag/(?P<tag_name>\w+)/$', views.tag, name='tag'),
-    url(r'^settings', views.SView.as_view(), name='settings'),
+    url(r'^settings', views.settings, name='settings'),
     url(r'^registration', views.RView.as_view(), name='registration'),
 
 ]

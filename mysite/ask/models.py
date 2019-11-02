@@ -5,9 +5,15 @@ from django.db import models
 from django.utils import timezone
 
 
+class TagManager(models.Manager):
+    def besters():
+        return Tag.objects.order_by('id')
+
+
 class Tag(models.Model):
     name = models.CharField(max_length=15)
     color = models.CharField(max_length=15)
+    object1 = TagManager
 
     def __str__(self):
         return self.name
@@ -15,6 +21,11 @@ class Tag(models.Model):
     class Meta:
         verbose_name = 'Тег'
         verbose_name_plural = 'Теги'
+
+
+class QuestionManager(models.Manager):
+    def besters():
+        return Question.objects.order_by('-pub_date')
 
 
 class Question(models.Model):
@@ -25,6 +36,7 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
     rating = models.IntegerField(default=0)
     tags = models.ManyToManyField(Tag)
+    object1 = QuestionManager
 
     def __str__(self):
         return self.title
