@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -304,6 +303,7 @@
       <workItem from="1572693052879" duration="7170000" />
       <workItem from="1572700753425" duration="235000" />
       <workItem from="1572701010227" duration="6431000" />
+      <workItem from="1572727313838" duration="4028000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
