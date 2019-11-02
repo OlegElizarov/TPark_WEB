@@ -43,6 +43,7 @@ def index(request):
         'ask/index.html', {
             'question_list': question_list,
             'tags': t,
+            'users':User.objects.all()
         }
     )
 
@@ -73,17 +74,21 @@ def base(request):
 
 def ask(request):
     t=Tag.objects.all()
-    u=User.objects.all()
-    #r= request.GET.getlist('tags')
     form = questionform()
     if request.method == "POST":
         form = questionform(request.POST)
         if form.is_valid():
-            title= form.cleaned_data['title']
-            text= form.cleaned_data['text']
-            tag= form.cleaned_data['tag']
-            print(title,text,tag)
-            return HttpResponseRedirect('#')
+            title1= form.cleaned_data['title']
+            text1= form.cleaned_data['text']
+            tag1= form.cleaned_data['tag']
+            print(title1,text1,tag1)
+            q=Question(title=title1,text=text1,author=request.user,pub_date=timezone.now(),rating=0)
+            print(q)
+            q.save()
+            for tg in tag1:
+                q.tags.add(Tag.objects.get(id=tg))
+            print(q)
+            return HttpResponseRedirect(reverse('ask:index'))
         else:
             form = questionform()
     return render(
@@ -91,6 +96,8 @@ def ask(request):
         'ask/question_create.html',
         {
             'form':form,
+            'users':User.objects.all(),
+            'tags':Tag.objects.all(),
         }
     )
 

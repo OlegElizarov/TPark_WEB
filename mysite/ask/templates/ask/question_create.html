@@ -1,8 +1,19 @@
-<!doctype html>
-<html lang="en">
-<h1>New question</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{form}}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
-</html>
+{% extends './base.html' %}
+{% block content %}
+<main>
+
+<div class="row">
+    <div class="col-md-8 col-sm-8 blog-main">
+      <h3 class="mb-4 font-italic border-bottom">
+        New Question
+      </h3>
+    </div>
+</div>
+    <div class="container-fluid" style="margin-top: 0%">
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-danger col-2 col-sm-1" >ASK!</button>
+        </form>
+    </div>
+</main>
+{%endblock%}

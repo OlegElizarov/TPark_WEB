@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/apps.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -302,7 +302,9 @@
       <workItem from="1572469374829" duration="596000" />
       <workItem from="1572543670906" duration="3308000" />
       <workItem from="1572607781162" duration="4341000" />
-      <workItem from="1572693052879" duration="7022000" />
+      <workItem from="1572693052879" duration="7170000" />
+      <workItem from="1572700753425" duration="235000" />
+      <workItem from="1572701010227" duration="5450000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
@@ -402,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572548343677</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="First try to make form">
+      <created>1572700480855</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1572700480856</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -429,7 +438,8 @@
     <MESSAGE value="questions+tags(without tags model)+index with models" />
     <MESSAGE value="correct tags and answers" />
     <MESSAGE value="ready to cut everything on template_bites+need rating button searcher" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready to cut everything on template_bites+need rating button searcher" />
+    <MESSAGE value="First try to make form" />
+    <option name="LAST_COMMIT_MESSAGE" value="First try to make form" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TPark_WEB$tests.coverage" NAME="tests Coverage Results" MODIFIED="1571087032133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite/ask" />
