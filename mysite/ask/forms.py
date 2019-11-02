@@ -15,7 +15,7 @@ for i in range(Tag.objects.count()):
 class questionform(forms.Form):
     title = forms.CharField()
     text = forms.CharField(widget=forms.Textarea)
-    tag = forms.MultipleChoiceField(choices=tags, widget=forms.CheckboxSelectMultiple,)
+    tag = forms.MultipleChoiceField(choices=tags)
 
     def clean(self):
         cleaned_data = super(questionform, self).clean()
