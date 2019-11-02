@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TPark_WEB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TPark_WEB.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -308,7 +300,9 @@
       <workItem from="1572380678975" duration="4301000" />
       <workItem from="1572419219384" duration="1423000" />
       <workItem from="1572469374829" duration="596000" />
-      <workItem from="1572543670906" duration="3254000" />
+      <workItem from="1572543670906" duration="3308000" />
+      <workItem from="1572607781162" duration="4341000" />
+      <workItem from="1572693052879" duration="7022000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
@@ -401,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572385233446</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="ready to cut everything on template_bites+need rating button searcher">
+      <created>1572548343677</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1572548343677</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

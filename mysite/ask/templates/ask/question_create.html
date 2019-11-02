@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en">
+<h1>New question</h1>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{form}}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</html>
