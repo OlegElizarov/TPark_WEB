@@ -9,8 +9,7 @@ from django.dispatch import receiver
 
 #Question.objects.annotate(num_tags=Count('tags',distinct=True)).order_by('-num_tags')
 #Tag.objects.annotate(num_tags=Count('question')).order_by('-num_tags')
-#author = models.ForeignKey(
-#        User, on_delete=models.SET_NULL, null=True, blank=True)
+
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     nickname = models.CharField(max_length=255)

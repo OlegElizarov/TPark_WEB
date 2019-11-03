@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^tag/(?P<tag_name>\w+)/$', views.tag, name='tag'),
     url(r'^settings', views.settings, name='settings'),
     url(r'^registration', views.RView.as_view(), name='registration'),
+    url(r'^question/(?P<question_id>\d+)/(?P<like_val>\d+)/$', views.like, name='like'),
 
 ]
