@@ -3,8 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 from ask import models
-from ask.models import Question, Answer, Tag,QuestionManager,TagManager
-from django.contrib.auth.models import User
+from ask.models import Question, Answer, Tag,QuestionManager,TagManager,Author
 from .forms import questionform
 from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
@@ -14,6 +13,7 @@ from django.urls import reverse
 def tag(request, tag_name):
     q = Question.objects.filter(tags__name__contains=tag_name)
     t = Tag.object1.besters()
+    print(Author.objects.all())
     paginator = Paginator(q, 2)  # Show 1 contacts per page
     page = request.GET.get('page')
     question_list = paginator.get_page(page)
@@ -23,7 +23,7 @@ def tag(request, tag_name):
             'tag_name': tag_name,
             'tags': t,
             'question_list': question_list,
-            'users': User.objects.all(),
+            'users': Author.objects.all(),
         }
     )
 
@@ -39,7 +39,7 @@ def index(request):
         'ask/index.html', {
             'question_list': question_list,
             'tags': t,
-            'users':User.objects.all()
+            'users':Author.objects.all()
         }
     )
 
@@ -54,7 +54,7 @@ def question(request, question_id):
             'question': q,
             'answer_list': a,
             'tags': t,
-            'users': User.objects.all(),
+            'users': Author.objects.all(),
         }
     )
 
@@ -65,7 +65,7 @@ def base(request):
         request,
         'ask/base.html', {
             'tags': t,
-            'users':User.objects.all(),
+            'users':Author.objects.all(),
         }
     )
 
@@ -94,7 +94,7 @@ def ask(request):
         'ask/question_create.html',
         {
             'form':form,
-            'users':User.objects.all(),
+            'users':Author.objects.all(),
             'tags':Tag.objects.all(),
         }
     )
@@ -113,7 +113,7 @@ def settings(request):
         request,
         'ask/settings.html', {
             'tags': t,
-            'users':User.objects.all(),
+            'users':Author.objects.all(),
         }
     )
 

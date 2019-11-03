@@ -11,20 +11,26 @@ from django.dispatch import receiver
 #Tag.objects.annotate(num_tags=Count('question')).order_by('-num_tags')
 #author = models.ForeignKey(
 #        User, on_delete=models.SET_NULL, null=True, blank=True)
-
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    nickname = models.CharField(max_length=255)
     birth_date = models.DateField(null=True, blank=True)
 
+    def __str__(self):
+        return self.nickname
+
     @receiver(post_save, sender=User)
-    def create_user_profile(sender, instance, created, **kwargs):
+    def create_user_author(sender, instance, created, **kwargs):
         if created:
             Author.objects.create(user=instance)
 
     @receiver(post_save, sender=User)
-    def save_user_profile(sender, instance, **kwargs):
-        instance.profile.save()
+    def save_user_author(sender, instance, **kwargs):
+        instance.author.save()
 
+    class Meta:
+        verbose_name = 'Автор'
+        verbose_name_plural = 'Авторы'
 
 
 class TagManager(models.Manager):
@@ -56,7 +62,7 @@ class Question(models.Model):
     title = models.CharField(max_length=255)
     text = models.TextField()
     author = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, blank=True)
+        Author, on_delete=models.SET_NULL, null=True, blank=True)
     pub_date = models.DateTimeField('date published')
     rating = models.IntegerField(default=0)
     tags = models.ManyToManyField(Tag)
@@ -72,7 +78,7 @@ class Question(models.Model):
 
 class Answer(models.Model):
     author = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, blank=True)
+        Author, on_delete=models.SET_NULL, null=True, blank=True)
     title = models.CharField(max_length=255)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     text = models.TextField()

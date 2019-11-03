@@ -68,14 +68,16 @@
         <a class="nav-link" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="30" height="30"></a>
       </li>
       {% if user.is_authenticated %}
+
       <li class="nav-item">
-        <a class="nav-link col-sm-4"  href="{% url 'ask:settings' %}">{{user.username}}</a>
+        <a class="nav-link col-sm-4"  href="{% url 'ask:settings' %}">{{user.author.nickname}}</a>
       </li>
+
       {% else %}
       <li class="nav-item">
         <a class="nav-link col-sm-4"  href="#">uusername</a>
       </li>
-  {% endif%}
+      {% endif%}
       <li class="nav-item dropdown col-sm-4 ">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Abilities</a>
@@ -104,7 +106,7 @@
         <h4 class="font-italic">Best members</h4>
         <ol class="list-unstyled mb-0">
           {% for user in users%}
-          <li><a href="{% url 'ask:settings' %}">{{user.username}}</a></li>
+          <li><a href="{% url 'ask:settings' %}">{{user.nickname}}</a></li>
           {%endfor%}
         </ol>
       </div>
