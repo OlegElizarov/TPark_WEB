@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question_create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -303,7 +303,8 @@
       <workItem from="1572693052879" duration="7170000" />
       <workItem from="1572700753425" duration="235000" />
       <workItem from="1572701010227" duration="6431000" />
-      <workItem from="1572727313838" duration="4553000" />
+      <workItem from="1572727313838" duration="4610000" />
+      <workItem from="1572774143338" duration="2077000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
@@ -424,7 +425,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572732104499</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="finall form template">
+      <created>1572732594072</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1572732594072</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +462,8 @@
     <MESSAGE value="First try to make form" />
     <MESSAGE value="question_create form with many choices" />
     <MESSAGE value="fight with forms in templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="fight with forms in templates" />
+    <MESSAGE value="finall form template" />
+    <option name="LAST_COMMIT_MESSAGE" value="finall form template" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TPark_WEB$tests.coverage" NAME="tests Coverage Results" MODIFIED="1571087032133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysite/ask" />

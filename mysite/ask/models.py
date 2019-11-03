@@ -3,11 +3,16 @@ import datetime
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
+from django.db.models import Count
+
+
+#Question.objects.annotate(num_tags=Count('tags',distinct=True)).order_by('-num_tags')
+#Tag.objects.annotate(num_tags=Count('question')).order_by('-num_tags')
 
 
 class TagManager(models.Manager):
     def besters():
-        return Tag.objects.order_by('id')
+        return Tag.objects.annotate(num_tags=Count('question')).order_by('-num_tags')
 
 
 class Tag(models.Model):
@@ -24,8 +29,10 @@ class Tag(models.Model):
 
 
 class QuestionManager(models.Manager):
-    def besters():
+    def fresh():
         return Question.objects.order_by('-pub_date')
+    def besters():
+        return Question.objects.order_by('-rating')
 
 
 class Question(models.Model):
