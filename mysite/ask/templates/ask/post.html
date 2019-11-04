@@ -6,11 +6,11 @@
           <div class="btn-group-vertical" style="margin-right: 50px">
 
              <button  onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ;
-                    style="height: 25px; width: 90%;" onclick="myFunction1({{question.id}})">
+                    style="height: 25px; width: 90%;" >
                  <a href="{% url 'ask:like' question.id 1 1 %}">▲</a></button>
 
             <button onmouseover="this.style.backgroundColor='red'"; onmouseout="this.style.backgroundColor='white'" ;
-                    style="height: 25px; width: 90%;" onclick="myFunction2({{question.id}})">
+                    style="height: 25px; width: 90%;" >
                 <a href="{% url 'ask:like' question.id 0 1 %}">▼</a></button>
           </div>
         </div>

@@ -91,3 +91,16 @@ class Answer(models.Model):
     class Meta:
         verbose_name = 'Ответ'
         verbose_name_plural = 'Ответы'
+
+class LikeDislike(models.Model):
+    author = models.ForeignKey(
+        Author, on_delete=models.SET_NULL, null=True, blank=True)
+    question = models.ForeignKey(
+        Question, on_delete=models.SET_NULL, null=True, blank=True)
+    answer = models.ForeignKey(
+        Answer, on_delete=models.SET_NULL, null=True, blank=True)
+    like_type= models.BooleanField()
+
+    class Meta:
+        verbose_name = 'Лайк'
+        verbose_name_plural = 'Лайки'
