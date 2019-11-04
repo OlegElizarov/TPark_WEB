@@ -12,7 +12,7 @@ from django.urls import reverse
 
 def tag(request, tag_name):
     q = Question.objects.filter(tags__name__contains=tag_name)
-    paginator = Paginator(q, 2)  # Show 1 contacts per page
+    paginator = Paginator(q, 3)  # Show 1 contacts per page
     page = request.GET.get('page')
     question_list = paginator.get_page(page)
     return render(
@@ -28,7 +28,7 @@ def tag(request, tag_name):
 
 def index(request):
     q = Question.object1.besters()
-    paginator = Paginator(q, 2)  # Show 2 contacts per page
+    paginator = Paginator(q, 3)  # Show 2 contacts per page
     page = request.GET.get('page')
     question_list = paginator.get_page(page)
     return render(
@@ -44,12 +44,16 @@ def index(request):
 def question(request, question_id):
     q = get_object_or_404(Question, pk=question_id)
     a = q.answer_set.all()
+    paginator = Paginator(a, 3)  # Show 1 contacts per page
+    page = request.GET.get('page')
+    answer_list = paginator.get_page(page)
     return render(
         request,
         'ask/question.html', {
             'question': q,
-            'answer_list': a,
+            'answer_list': answer_list,
             'tags': Tag.object1.besters(),
+            'question_list': answer_list,
             'users': Author.objects.all(),
         }
     )
@@ -92,6 +96,7 @@ def ask(request):
         }
     )
 
+
 def settings(request):
     return render(
         request,
@@ -108,8 +113,17 @@ class RView(generic.ListView):
     def get_queryset(self):
         pass
 
-def like(request,question_id,like_val):
-    q = get_object_or_404(Question, pk=question_id)
-    q.rating=q.rating-1 + 2*int(like_val)
-    q.save()
-    return HttpResponseRedirect(reverse('ask:index'))
+
+def like(request, object_id, like_val, typ_obj):
+    if typ_obj != '0':
+        q = get_object_or_404(Question, pk=object_id)
+        q.rating = q.rating - 1 + 2 * int(like_val)
+        q.save()
+        return HttpResponseRedirect(reverse('ask:index'))
+    else:
+        a = get_object_or_404(Answer, pk=object_id)
+        a.rating = a.rating - 1 + 2 * int(like_val)
+        a.save()
+        q = a.question
+        q=q.id
+        return HttpResponseRedirect(reverse('ask:question',kwargs={'question_id':q}))

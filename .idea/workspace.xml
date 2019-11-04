@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
@@ -309,6 +309,7 @@
       <workItem from="1572727313838" duration="4610000" />
       <workItem from="1572774143338" duration="5783000" />
       <workItem from="1572811093080" duration="1970000" />
+      <workItem from="1572868397256" duration="6373000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>

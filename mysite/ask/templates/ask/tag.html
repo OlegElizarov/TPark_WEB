@@ -11,49 +11,14 @@
       </h3>
     </div>
 {% for question in question_list %}
-    <div class="container-fluid" style="margin-top: 0px">
-
-      <div class="row">
-        <div class="col col-2" style="border: 3px solid red;border-right: none">
-         <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
-
-          <div class="btn-group" style="margin-top: 10%">
-              <div><input style="width: 60px" type="number" id={{question.id}}></div>
-          <div class="btn-group-vertical" style="margin-right: 50px">
-            <button onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 90%;" onclick="myFunction1({{question.id}})">▲</button>
-            <button onmouseover="this.style.backgroundColor='red'"; onmouseout="this.style.backgroundColor='white'" ; style="height: 25px; width: 90%;" onclick="myFunction2({{question.id}})">▼</button>
+          <div class="container-fluid" style="margin-top: 0px">
+              <div class="row">
+      {% include "post.html" %}
+              </div>
           </div>
-        </div>
-        </div>
-        <div class="col col-7" style="border: 3px solid red;">
-        <div class="blog-post">
-        <h2><a style="color: darkviolet" href="#">{{question.title}}</a></h2>
-        <p class="blog-post-meta">January 1, 2014 by
-          <a href="{% url 'ask:settings' %}">{{question.author}}</a>
-        </p>
-            {{question.text}}
-          <hr>
-            <p> <a href="{% url 'ask:question' question.id %}">Answers({{question.answer_set.count}})</a> Tags:
-                {% for tag in question.tags.all%}
-                <a href="{% url 'ask:tag' tag.name %}" style="color: {{tag.color}} ">({{tag.name}})</a>
-                {% endfor%}
-            </p>
-        </div><!-- /.blog-post -->
-        </div>
-      </div>
- </div>
-
-
-
 {% endfor %}
-
       {% include "paginator.html" %}
-
-
   </div>
 </main><!-- /.container -->
-
-
-
 {% endblock %}
 
