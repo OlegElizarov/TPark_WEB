@@ -1,61 +1,51 @@
 {% extends './base.html' %}
 
 {% block content %}
-    <script src="../../static/js/buttons.js"></script>
-
-  <main role="main" class="container-fluid m-5">
-
-
-
-<div class="container-fluid" style="margin-top: 0px">
-<div>
-      <div class="row">
-          {% include "post.html" %}
-{% for answer in answer_list%}
-           <div class="row" style="border: 3px solid red; width: 70%;margin-left: 0%">
-        <div class="col col-2">
-         <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
-
-           <div class="btn-group" style="margin-top: 10%">
-              <div><input class="inputer" style="width: 60px" type="number" ans-id={{answer.id}} value={{answer.rating}}></div>
-          <div class="btn-group-vertical" style="margin-right: 50px">
-
-             <button  onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ;
-                    style="height: 25px; width: 90%;">
-                 <a href="{% url 'ask:like' answer.id 1 0 %}">▲</a></button>
-
-            <button onmouseover="this.style.backgroundColor='red'"; onmouseout="this.style.backgroundColor='white'" ;
-                    style="height: 25px; width: 90%;" >
-                <a href="{% url 'ask:like' answer.id 0 0 %}">▼</a></button>
-          </div>
+<script src="../../static/js/buttons.js"></script>
+<main role="main" class="container-fluid m-5">
+    <div class="container-fluid" style="margin-top: 0px">
+        <div>
+            <div class="row">
+                {% include "post.html" %}
+                {% for answer in answer_list%}
+                <div class="row" style="border: 3px solid red; width: 70%;margin-left: 0%">
+                    <div class="col col-2">
+                        <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
+                        <div class="btn-group" style="margin-top: 10%">
+                            <div><input class="inputer" style="width: 60px" type="number" ans-id={{answer.id}} value={{answer.rating}}></div>
+                            <div class="btn-group-vertical" style="margin-right: 50px">
+                                <button  onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ;
+                                         style="height: 25px; width: 90%;">
+                                    <a href="{% url 'ask:like' answer.id 1 0 %}">▲</a></button>
+                                <button onmouseover="this.style.backgroundColor='red'"; onmouseout="this.style.backgroundColor='white'" ;
+                                        style="height: 25px; width: 90%;" >
+                                    <a href="{% url 'ask:like' answer.id 0 0 %}">▼</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-7" style="margin-left: 10%">
+                        <div class="blog-post" style="margin-top: 0%">
+                            <h2><a style="color: darkviolet" href="#">{{answer.title}}</a></h2>
+                            <p class="blog-post-meta"> {{answer.pub_date}}
+                                <a href="{% url 'ask:settings' %}">{{answer.author}}</a>
+                            </p>
+                            {{answer.text}}
+                            <blockquote>
+                            </blockquote>
+                            <hr>
+                            {% if answer.correct %}
+                            <p><input type="checkbox" name="check" value="True" checked> Correct!</p>
+                            {% else %}
+                            <p><input type="checkbox" name="check" value="True"> Correct!</p>
+                            {% endif %}
+                        </div><!-- /.blog-post -->
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-
-        </div>
-        <div class="col col-7" style="margin-left: 10%">
-        <div class="blog-post" style="margin-top: 0%">
-        <h2><a style="color: darkviolet" href="#">{{answer.title}}</a></h2>
-        <p class="blog-post-meta"> {{answer.pub_date}}
-          <a href="{% url 'ask:settings' %}">{{answer.author}}</a>
-        </p>
-{{answer.text}}
-            <blockquote>
-        </blockquote>
-          <hr>
-            {% if answer.correct %}
-            <p><input type="checkbox" name="check" value="True" checked> Correct!</p>
-            {% else %}
-            <p><input type="checkbox" name="check" value="True"> Correct!</p>
-            {% endif %}
-      </div><!-- /.blog-post -->
-        </div>
-           </div>
-          {% endfor %}
-      </div>
-</div>
-</div>
-      </div>
-      {% include "paginator.html" %}
-
-  </main>
-
+    </div>
+    </div>
+    {% include "paginator.html" %}
+</main>
 {% endblock %}
