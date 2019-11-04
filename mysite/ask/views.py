@@ -74,15 +74,11 @@ def ask(request):
     if request.method == "POST":
         form = questionform(request.POST)
         if form.is_valid():
-            title1 = form.cleaned_data['title']
-            text1 = form.cleaned_data['text']
-            tag1 = form.cleaned_data['tag']
-            print(title1, text1, tag1)
-            q = Question(title=title1, text=text1, author=request.user, pub_date=timezone.now(), rating=0)
+            q = Question(title=form.cleaned_data['title'], text=form.cleaned_data['text'],
+                         author=get_object_or_404(Author, user=request.user), pub_date=timezone.now(), rating=0)
             q.save()
-            for tg in tag1:
+            for tg in form.cleaned_data['tag']:
                 q.tags.add(Tag.objects.get(id=tg))
-            print(q)
             return HttpResponseRedirect(reverse('ask:index'))
         else:
             form = questionform()
@@ -117,15 +113,29 @@ class RView(generic.ListView):
 def like(request, object_id, like_val, typ_obj):
     if typ_obj != '0':
         q = get_object_or_404(Question, pk=object_id)
-        if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), question=q,like_type=int(like_val)).count() == 0):
-            LikeDislike.objects.create(author=get_object_or_404(Author, user=request.user), question=q,like_type=int(like_val))
+        if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), question=q,
+                                       like_type=int(like_val)).count() == 0):
+            if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), question=q,
+                                           like_type=(int(like_val)) ^ 1).count() != 0):
+                LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), question=q,
+                                           like_type=(int(like_val)) ^ 1).delete()
+                q.rating = q.rating - 1 + 2 * int(like_val)
+            LikeDislike.objects.create(author=get_object_or_404(Author, user=request.user), question=q,
+                                       like_type=int(like_val))
             q.rating = q.rating - 1 + 2 * int(like_val)
             q.save()
         return HttpResponseRedirect(reverse('ask:index'))
     else:
         a = get_object_or_404(Answer, pk=object_id)
-        if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), answer=a,like_type=int(like_val)).count() == 0):
-            LikeDislike.objects.create(author=get_object_or_404(Author, user=request.user), answer=a,like_type=int(like_val))
+        if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), answer=a,
+                                       like_type=int(like_val)).count() == 0):
+            if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), answer=a,
+                                           like_type=(int(like_val)) ^ 1).count() != 0):
+                LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), answer=a,
+                                           like_type=(int(like_val)) ^ 1).delete()
+                a.rating = a.rating - 1 + 2 * int(like_val)
+            LikeDislike.objects.create(author=get_object_or_404(Author, user=request.user), answer=a,
+                                       like_type=int(like_val))
             a.rating = a.rating - 1 + 2 * int(like_val)
             a.save()
         q = a.question
