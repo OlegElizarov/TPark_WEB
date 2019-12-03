@@ -6,12 +6,15 @@ from django.utils import timezone
 from django.db.models import Count
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 
-#Question.objects.annotate(num_tags=Count('tags',distinct=True)).order_by('-num_tags')
-#Tag.objects.annotate(num_tags=Count('question')).order_by('-num_tags')
+
+# Question.objects.annotate(num_tags=Count('tags',distinct=True)).order_by('-num_tags')
+# Tag.objects.annotate(num_tags=Count('question')).order_by('-num_tags')
 
 class Author(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE,)
     nickname = models.CharField(max_length=255)
     birth_date = models.DateField(null=True, blank=True)
 
@@ -33,14 +36,14 @@ class Author(models.Model):
 
 
 class TagManager(models.Manager):
-    def besters():
-        return Tag.objects.annotate(num_tags=Count('question')).order_by('-num_tags')
+    def besters(self):
+        return self.annotate(num_tags=Count('question')).order_by('-num_tags')
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=15)
+    name = models.CharField(max_length=15,unique=True)
     color = models.CharField(max_length=15)
-    object1 = TagManager
+    objects = TagManager()
 
     def __str__(self):
         return self.name
@@ -51,10 +54,11 @@ class Tag(models.Model):
 
 
 class QuestionManager(models.Manager):
-    def fresh():
-        return Question.objects.order_by('-pub_date')
-    def besters():
-        return Question.objects.order_by('-rating')
+    def fresh(self):
+        return self.order_by('-pub_date')
+
+    def besters(self):
+        return self.order_by('-rating')
 
 
 class Question(models.Model):
@@ -65,7 +69,7 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
     rating = models.IntegerField(default=0)
     tags = models.ManyToManyField(Tag)
-    object1 = QuestionManager
+    objects = QuestionManager()
 
     def __str__(self):
         return self.title
@@ -92,14 +96,19 @@ class Answer(models.Model):
         verbose_name = 'Ответ'
         verbose_name_plural = 'Ответы'
 
+
 class LikeDislike(models.Model):
     author = models.ForeignKey(
         Author, on_delete=models.SET_NULL, null=True, blank=True)
-    question = models.ForeignKey(
-        Question, on_delete=models.SET_NULL, null=True, blank=True)
-    answer = models.ForeignKey(
-        Answer, on_delete=models.SET_NULL, null=True, blank=True)
-    like_type= models.BooleanField()
+
+    #question = models.ForeignKey(
+    #    Question, on_delete=models.SET_NULL, null=True, blank=True)
+    #answer = models.ForeignKey(
+    #    Answer, on_delete=models.SET_NULL, null=True, blank=True)
+    like_type = models.BooleanField()
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    content_object = GenericForeignKey('content_type', 'object_id')
 
     class Meta:
         verbose_name = 'Лайк'

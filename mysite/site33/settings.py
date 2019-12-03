@@ -12,7 +12,7 @@ SECRET_KEY = 'f+u1wo3btr28-#vqzo5636%y_!tn$xo&*&(uge4e3k1(1g3kf='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','testserver']
+ALLOWED_HOSTS = ['0.0.0.0','testserver','2.1.168.192.in-addr.arpa']
 
 
 # Application definition
@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ask'
+    'ask',
 ]
 
 MIDDLEWARE = [
@@ -107,6 +107,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/ask'
+LOGIN_REDIRECT_URL = '/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

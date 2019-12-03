@@ -1,10 +1,10 @@
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 from ask.models import Question, Answer, Tag, QuestionManager, TagManager, Author, LikeDislike
 from .forms import questionform
-from django.shortcuts import redirect
 from django.http import HttpResponseRedirect
 from django.utils import timezone
 from django.urls import reverse
@@ -23,7 +23,7 @@ def tag(request, tag_name):
         request,
         'ask/tag.html', {
             'tag_name': tag_name,
-            'tags': Tag.object1.besters(),
+            'tags': Tag.objects.besters(),
             'question_list': question_list,
             'users': Author.objects.all(),
         }
@@ -31,13 +31,13 @@ def tag(request, tag_name):
 
 
 def index(request):
-    q = Question.object1.besters()
+    q = Question.objects.besters()
     question_list = paginator(request, q, 2)
     return render(
         request,
         'ask/index.html', {
             'question_list': question_list,
-            'tags': Tag.object1.besters(),
+            'tags': Tag.objects.besters(),
             'users': Author.objects.all()
         }
     )
@@ -52,7 +52,7 @@ def question(request, question_id):
         'ask/question.html', {
             'question': q,
             'answer_list': answer_list,
-            'tags': Tag.object1.besters(),
+            'tags': Tag.objects.besters(),
             'question_list': answer_list,
             'users': Author.objects.all(),
         }
@@ -63,12 +63,12 @@ def base(request):
     return render(
         request,
         'ask/base.html', {
-            'tags': Tag.object1.besters(),
+            'tags': Tag.objects.besters(),
             'users': Author.objects.all(),
         }
     )
 
-
+@login_required
 def ask(request):
     form = questionform()
     if request.method == "POST":
@@ -78,7 +78,8 @@ def ask(request):
                          author=get_object_or_404(Author, user=request.user), pub_date=timezone.now(), rating=0)
             q.save()
             for tg in form.cleaned_data['tag']:
-                q.tags.add(Tag.objects.get(id=tg))
+                Tag.objects.get_or_create(name=tg)
+                q.tags.add(Tag.objects.get(name=tg))
             return HttpResponseRedirect(reverse('ask:index'))
         else:
             form = questionform()
@@ -88,7 +89,7 @@ def ask(request):
         {
             'form': form,
             'users': Author.objects.all(),
-            'tags': Tag.object1.besters(),
+            'tags': Tag.objects.besters(),
         }
     )
 
@@ -97,7 +98,7 @@ def settings(request):
     return render(
         request,
         'ask/settings.html', {
-            'tags': Tag.object1.besters(),
+            'tags': Tag.objects.besters(),
             'users': Author.objects.all(),
         }
     )
@@ -110,6 +111,10 @@ class RView(generic.ListView):
         pass
 
 
+
+
+
+#неготовая часть
 def like(request, object_id, like_val, typ_obj):
     if typ_obj != '0':
         q = get_object_or_404(Question, pk=object_id)
@@ -141,3 +146,7 @@ def like(request, object_id, like_val, typ_obj):
         q = a.question
         q = q.id
         return HttpResponseRedirect(reverse('ask:question', kwargs={'question_id': q}))
+
+# request.GET.get('r')
+# Response.objects.filter(pk=r).first()
+# form= formname()
