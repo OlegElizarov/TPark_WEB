@@ -75,7 +75,7 @@
 
       {% else %}
       <li class="nav-item">
-        <a class="nav-link col-sm-4"  href="#">uusername</a>
+        <a class="nav-link col-sm-4"  href="{% url 'ask:login' %}">uusername</a>
       </li>
       {% endif%}
       <li class="nav-item dropdown col-sm-4 ">
@@ -83,7 +83,7 @@
           Abilities</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="{% url 'ask:settings' %}">Settings</a>
-          <a class="dropdown-item" href="/accounts/logout">Logout</a>
+          <a class="dropdown-item" href="/logout">Logout</a>
         </div>
       </li>
     </ul>

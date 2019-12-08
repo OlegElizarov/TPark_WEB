@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
-
 {% block content %}
 <main>
 <div class="row border-bottom">
     <div class="col-md-8 col-sm-8 blog-main">
       <h3 class="mb-4 font-italic" style="margin-left: 4%">
-        Log in
+        Login page
       </h3>
     </div>
 </div>
 
 <div class="container-fluid" style="margin-top: 5%">
 <form class="form-signin col-4" style="margin-left: 19%" id="login-form" method="post"
-                  action="{% url 'login' %}">
+                  action="{% url 'ask:login' %}">
                 {% csrf_token %}
-    <img class="mb-4 col-12" src="https://upload.wikimedia.org/wikipedia/commons/f/f7/ASKfm-logo.svg" alt="" width="72" height="72">
+    <img class="mb-4 col-12" src="https://upload.wikimedia.org/wikipedia/commons/f/f7/ASKfm-logo.svg" alt=""
+         width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal col-6" style="margin-left: 27%" >Please sign in</h1>
     <input id="id_username" name="username" type="text" class="form-control" placeholder="Username">
 
@@ -24,7 +24,7 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
-    {% if form.errors %}
+    {% if error %}
                     <p class=" label label-danger">
                         Your username and password didn't match.
                         Please try again.
@@ -33,7 +33,6 @@
 
                 <input class="btn btn-lg btn-primary btn-block bg-danger" type="submit" value="Sign in"
                        class="btn btn-primary pull-right" />
-                <input type="hidden" name="next" value="{{ next }}" />
             </form>
 </div>
 

@@ -11,6 +11,8 @@ urlpatterns = [
     url(r'^tag/(?P<tag_name>\w+)/$', views.tag, name='tag'),
     url(r'^settings', views.settings, name='settings'),
     url(r'^registration', views.RView.as_view(), name='registration'),
+    url(r'^login', views.logged_in, name='login'),
+    url(r'^logout', views.logged_out, name='logout'),
     url(r'^question/(?P<object_id>\d+)/(?P<like_val>\d+)/(?P<typ_obj>\d+)/$', views.like, name='like'),
 
 ]

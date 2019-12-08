@@ -8,6 +8,8 @@ from .forms import questionform
 from django.http import HttpResponseRedirect
 from django.utils import timezone
 from django.urls import reverse
+from django.contrib.auth import logout
+from django.contrib.auth import authenticate, login
 
 
 def paginator(request, obj, per_pages):
@@ -15,6 +17,42 @@ def paginator(request, obj, per_pages):
     page = request.GET.get('page')
     return pag.get_page(page)
 
+def logged_out(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('ask:index'))
+
+
+def logged_in(request):
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('ask:index'))
+    if request.method == "GET":
+        return render(
+            request,
+            'ask/login.html',
+            {
+                'tags': Tag.objects.besters(),
+                'users': Author.objects.all(),
+            }
+        )
+    else:
+        if request.method == 'POST':
+            username = request.POST['username']
+            print(username)
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return HttpResponseRedirect(reverse('ask:index'))
+            else:
+                return render(
+                    request,
+                    'ask/login.html',
+                    {
+                        'tags': Tag.objects.besters(),
+                        'users': Author.objects.all(),
+                        'error':'error',
+                     }
+                )
 
 def tag(request, tag_name):
     q = Question.objects.filter(tags__name__contains=tag_name)
@@ -93,7 +131,7 @@ def ask(request):
         }
     )
 
-
+@login_required
 def settings(request):
     return render(
         request,
@@ -109,8 +147,6 @@ class RView(generic.ListView):
 
     def get_queryset(self):
         pass
-
-
 
 
 
