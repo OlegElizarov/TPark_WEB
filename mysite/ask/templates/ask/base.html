@@ -50,6 +50,7 @@
       main div{
         margin-top: 50px;
       }
+
     </style>
   </head>
 
@@ -65,10 +66,15 @@
   <div class="col-3 col-sm-3 navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto col-5">
       <li class="nav-item">
-        <a class="nav-link" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="30" height="30"></a>
+
+        {% if user.is_authenticated %}
+        <a class="nav-link" href="#"><img src="{{user.author.avatar.url}}" width="30" height="30"></a>
+        {% else %}
+        <a class="nav-link" href="#"><img src="ask/media/images/avatars/ELQ64F1XUAAtL-1.jpg" width="30" height="30"></a>
+        {% endif%}
+
       </li>
       {% if user.is_authenticated %}
-
       <li class="nav-item">
         <a class="nav-link col-sm-4"  href="{% url 'ask:settings' %}">{{user.author.nickname}}</a>
       </li>
@@ -118,8 +124,6 @@
 </div>
 {% block content %}
 {% endblock %}
-
-
     <script src="/static/js/jquery-3.3.1.slim.min.js"></script>
     <script src="/static/js/popper.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>

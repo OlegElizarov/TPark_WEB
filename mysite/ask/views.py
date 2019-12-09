@@ -1,10 +1,11 @@
-from django.views import generic
+from django.views.generic import View
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 from ask.models import Question, Answer, Tag, QuestionManager, TagManager, Author, LikeDislike
-from .forms import questionform
+from django.contrib.auth.models import User
+from .forms import questionform,RegistrationForm,SettingForm
 from django.http import HttpResponseRedirect
 from django.utils import timezone
 from django.urls import reverse
@@ -37,7 +38,6 @@ def logged_in(request):
     else:
         if request.method == 'POST':
             username = request.POST['username']
-            print(username)
             password = request.POST['password']
             user = authenticate(request, username=username, password=password)
             if user is not None:
@@ -118,7 +118,8 @@ def ask(request):
             for tg in form.cleaned_data['tag']:
                 Tag.objects.get_or_create(name=tg)
                 q.tags.add(Tag.objects.get(name=tg))
-            return HttpResponseRedirect(reverse('ask:index'))
+                qid=q.id
+            return HttpResponseRedirect(reverse('ask:question', kwargs={'question_id': q}))
         else:
             form = questionform()
     return render(
@@ -133,21 +134,70 @@ def ask(request):
 
 @login_required
 def settings(request):
-    return render(
-        request,
-        'ask/settings.html', {
-            'tags': Tag.objects.besters(),
-            'users': Author.objects.all(),
-        }
+    if request.method == "GET":
+        form=SettingForm(request.user,initial={'nickname':request.user.author.nickname , 'email':request.user.email})
+        form.user=request.user
+        return render(
+            request,
+            'ask/settings.html', {
+                'form': form,
+                'tags': Tag.objects.besters(),
+                'users': Author.objects.all(),
+            }
+        )
+    if request.method == "POST":
+        form = SettingForm(request.user,data=request.POST, files=request.FILES)
+        if form.is_valid():
+            u = form.save()
+            a = Author.objects.get(user=u)
+            a.nickname = form.cleaned_data['nickname']
+            a.avatar = request.FILES
+            a.save()
+            print(Author.objects.all())
+            login(request, u)
+            return HttpResponseRedirect(reverse('ask:index'))
+        else:
+            form = SettingForm(request.user)
+        return render(
+            request,
+            'ask/settings.html',
+            {
+                'form': form,
+                'users': Author.objects.all(),
+                'tags': Tag.objects.besters(),
+            }
     )
 
 
-class RView(generic.ListView):
-    template_name = 'ask/registration.html'
 
-    def get_queryset(self):
-        pass
+class RView(View):
 
+    def get(self,request,**kwargs):
+        if request.user.is_authenticated:
+            return HttpResponseRedirect(reverse('ask:index'))
+        form = kwargs.get('form', RegistrationForm())
+        return render(
+            request,
+            'registration.html',{
+            'tags': Tag.objects.besters(),
+            'users': Author.objects.all(),
+            'form':form,
+            }
+        )
+    def post(self,request):
+        form = RegistrationForm(data=request.POST, files=request.FILES)
+        if form.is_valid():
+            u=form.save()
+            a=Author.objects.get(user=u)
+            a.nickname=form.cleaned_data['nickname']
+            a.avatar=request.FILES
+            a.save()
+            print(Author.objects.all())
+            login(request,u)
+
+            return HttpResponseRedirect(reverse('ask:index'))
+        else:
+            return self.get(request, form=form)
 
 
 #неготовая часть
