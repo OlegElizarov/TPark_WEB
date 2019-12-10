@@ -57,9 +57,10 @@ class RegistrationForm(forms.Form):
         return u
 
 class SettingForm(forms.Form):
-    nickname = forms.CharField(initial='nickname')
-    email = forms.EmailField(initial='email')
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'col-3 control-label', 'required': True}))
+    nickname = forms.CharField(initial='nickname',
+                               widget=forms.TextInput(attrs={'class': 'col-5 control-label', 'required': True}))
+    email = forms.EmailField(initial='email',widget=forms.EmailInput(attrs={'class': 'col-5 control-label', 'required': True}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'col-5 control-label', 'required': True}))
     avatar = forms.ImageField()
 
     def __init__(self, user, *args, **kwargs):

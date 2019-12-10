@@ -1,0 +1,20 @@
+{% for error in form.non_field_errors %}
+    <div class="alert alert-danger col-sm-6">
+        {{ error }}
+    </div>
+{% endfor %}
+
+{% for field in form.visible_fields %}
+    <div class="form-group">
+            {% for error in field.errors %}
+                <div class="invalid-feedback">
+                    {{ error }}
+                </div>
+            {% endfor %}
+
+        <div class="col-8" style="border: 3px solid;border-color:orange">
+        <label for="{{ field.id_for_label }}" class="col-form-label col-3">{{ field.label }}</label>
+        {{ field }}
+        </div>
+    </div>
+{% endfor %}

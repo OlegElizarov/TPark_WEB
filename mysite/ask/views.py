@@ -151,9 +151,10 @@ def settings(request):
             u = form.save()
             a = Author.objects.get(user=u)
             a.nickname = form.cleaned_data['nickname']
-            a.avatar = request.FILES
+            #print(request.FILES)
+            print(a.nickname)
+            #a.avatar = request.FILES
             a.save()
-            print(Author.objects.all())
             login(request, u)
             return HttpResponseRedirect(reverse('ask:index'))
         else:
@@ -168,7 +169,7 @@ def settings(request):
             }
     )
 
-
+#ВАЖНО СПРОСИТЬ из тегов не верный запрос на картинки идет!!!
 
 class RView(View):
 
@@ -190,7 +191,8 @@ class RView(View):
             u=form.save()
             a=Author.objects.get(user=u)
             a.nickname=form.cleaned_data['nickname']
-            a.avatar=request.FILES
+            #a.avatar=request.FILES
+            print(request.FILES)
             a.save()
             print(Author.objects.all())
             login(request,u)
