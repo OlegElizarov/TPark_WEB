@@ -42,7 +42,9 @@ def logged_in(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return HttpResponseRedirect(reverse('ask:index'))
+                redirect_to = request.GET.get('next','index')
+                print(redirect_to)
+                return HttpResponseRedirect(redirect_to)
             else:
                 return render(
                     request,
@@ -85,6 +87,7 @@ def question(request, question_id):
     q = get_object_or_404(Question, pk=question_id)
     a = q.answer_set.all()
     answer_list = paginator(request, a, 2)
+    ctx = {}
     return render(
         request,
         'ask/question.html', {
@@ -119,7 +122,7 @@ def ask(request):
                 Tag.objects.get_or_create(name=tg)
                 q.tags.add(Tag.objects.get(name=tg))
                 qid=q.id
-            return HttpResponseRedirect(reverse('ask:question', kwargs={'question_id': q}))
+            return HttpResponseRedirect(reverse('ask:question', kwargs={'question_id': qid}))
         else:
             form = questionform()
     return render(
@@ -135,7 +138,8 @@ def ask(request):
 @login_required
 def settings(request):
     if request.method == "GET":
-        form=SettingForm(request.user,initial={'nickname':request.user.author.nickname , 'email':request.user.email})
+        form=SettingForm(request.user,initial={'nickname':request.user.author.nickname ,
+                                               'email':request.user.email,'user':request.user})
         form.user=request.user
         return render(
             request,
@@ -146,18 +150,13 @@ def settings(request):
             }
         )
     if request.method == "POST":
-        form = SettingForm(request.user,data=request.POST, files=request.FILES)
+        form = SettingForm(request.user.author,data=request.POST, files=request.FILES)
+        print("tttt")
         if form.is_valid():
-            u = form.save()
-            a = Author.objects.get(user=u)
-            a.nickname = form.cleaned_data['nickname']
-            #print(request.FILES)
-            print(a.nickname)
-            #a.avatar = request.FILES
-            a.save()
-            login(request, u)
+            form.save()
             return HttpResponseRedirect(reverse('ask:index'))
         else:
+            print("errr")
             form = SettingForm(request.user)
         return render(
             request,
@@ -185,16 +184,19 @@ class RView(View):
             'form':form,
             }
         )
+
     def post(self,request):
         form = RegistrationForm(data=request.POST, files=request.FILES)
         if form.is_valid():
-            u=form.save()
-            a=Author.objects.get(user=u)
-            a.nickname=form.cleaned_data['nickname']
+            u = form.save()
+            a = u.author
+            a.nickname = form.cleaned_data['nickname']
             #a.avatar=request.FILES
-            print(request.FILES)
+
             a.save()
-            print(Author.objects.all())
+            print(a)
+            # print()
+            # print(Author.objects.all())
             login(request,u)
 
             return HttpResponseRedirect(reverse('ask:index'))

@@ -3,6 +3,8 @@ from django.core.exceptions import ValidationError
 from .models import Question, Tag,Author
 from django.contrib.auth.models import User
 from django.contrib.auth import login
+from django.forms import ModelForm
+
 
 
 import re  # import regular expressions
@@ -36,6 +38,8 @@ class questionform(forms.Form):
 
 class RegistrationForm(forms.Form):
     nickname = forms.CharField()
+    email = forms.EmailField(initial='email',
+                             widget=forms.EmailInput(attrs={'class': 'col-5 control-label', 'required': True}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'col-3 control-label','required': True}))
     confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'col-3 control-label','required': True}))
     avatar = forms.ImageField()
@@ -56,30 +60,27 @@ class RegistrationForm(forms.Form):
         u.save()
         return u
 
-class SettingForm(forms.Form):
-    nickname = forms.CharField(initial='nickname',
-                               widget=forms.TextInput(attrs={'class': 'col-5 control-label', 'required': True}))
-    email = forms.EmailField(initial='email',widget=forms.EmailInput(attrs={'class': 'col-5 control-label', 'required': True}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'col-5 control-label', 'required': True}))
-    avatar = forms.ImageField()
+class SettingForm(forms.ModelForm):
+    class Meta:
+        model = Author
+        fields = ['avatar','nickname']
+        widgets = {
+                   'nickname':forms.TextInput(attrs={'class': 'col-5 control-label', 'required': True})}
 
-    def __init__(self, user, *args, **kwargs):
-        self.user = user
+    email = forms.EmailField(initial='email',widget=forms.EmailInput(attrs={'class': 'col-4 control-label', 'required': True}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'col-4 control-label', 'required': True}))
+
+
+    def __init__(self, author, *args, **kwargs):
+        self.author = author
         super(SettingForm, self).__init__(*args, **kwargs)
 
-    def clean(self):
-        confirm_password = self.user.password
-        password = self.cleaned_data.get('password')
-
-        if password != confirm_password:
-            raise forms.ValidationError('You can not change your pass on current pass')
-
-        cleaned_data = super(SettingForm, self).clean()
-        return cleaned_data
-
-    def save(self, commit=True):
-        u = self.user
-        u.email=self.changed_data['email']
-        u.set_password(self.cleaned_data.get('password'))
+    def save(self):
+        a= self.author
+        u = a.user
+        a.nickname = self.cleaned_data['nickname']
+        u.email = self.cleaned_data['email']
+        a.avatar = self.cleaned_data['avatar']
         u.save()
-        return u
+        a.save()
+        return a

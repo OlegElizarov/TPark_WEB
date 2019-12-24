@@ -12,7 +12,7 @@ SECRET_KEY = 'f+u1wo3btr28-#vqzo5636%y_!tn$xo&*&(uge4e3k1(1g3kf='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0','testserver','2.1.168.192.in-addr.arpa']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','testserver','2.1.168.192.in-addr.arpa','ask.me']
 
 
 # Application definition
@@ -106,11 +106,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/ask/static/'
 
 LOGIN_URL = '/login'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "ask/media")
-MEDIA_URL = 'ask/media/'
+MEDIA_URL = '/ask/media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
