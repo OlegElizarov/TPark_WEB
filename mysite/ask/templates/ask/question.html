@@ -10,7 +10,7 @@
                 {% for answer in answer_list%}
                 <div class="row" style="border: 3px solid red; width: 70%;margin-left: 0%">
                     <div class="col col-2">
-                        <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
+                        <a class="blog-post" href="#"><img src={{ answer.author.avatar.url }} width="60" height="60" style="margin: 10px"></a><br>
                         <div class="btn-group" style="margin-top: 10%;margin-bottom: 10%">
                             <div><input class="inputer" style="width: 60px" type="number" ans-id={{answer.id}} value={{answer.rating}}></div>
                             <div class="btn-group-vertical" style="margin-right: 50px">
@@ -45,6 +45,11 @@
             </div>
         </div>
     </div>
+<form method="POST" class="post-form">{% csrf_token %}
+    <div>Title: {{ form.title }}</div>
+    <div>Text : {{ form.text }}</div>
+    <button type="submit" class="btn btn-danger col-2 col-sm-1" style="margin: 3%">ANSWER!</button>
+</form>
     </div>
     {% include "paginator.html" %}
 </main>

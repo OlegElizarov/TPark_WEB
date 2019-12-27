@@ -5,7 +5,7 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
 from ask.models import Question, Answer, Tag, QuestionManager, TagManager, Author, LikeDislike
 from django.contrib.auth.models import User
-from .forms import questionform,RegistrationForm,SettingForm
+from .forms import questionform, RegistrationForm, SettingForm, answerform
 from django.http import HttpResponseRedirect
 from django.utils import timezone
 from django.urls import reverse
@@ -17,6 +17,7 @@ def paginator(request, obj, per_pages):
     pag = Paginator(obj, per_pages)
     page = request.GET.get('page')
     return pag.get_page(page)
+
 
 def logged_out(request):
     logout(request)
@@ -42,7 +43,7 @@ def logged_in(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                redirect_to = request.GET.get('next','index')
+                redirect_to = request.GET.get('next', 'index')
                 print(redirect_to)
                 return HttpResponseRedirect(redirect_to)
             else:
@@ -52,9 +53,10 @@ def logged_in(request):
                     {
                         'tags': Tag.objects.besters(),
                         'users': Author.objects.all(),
-                        'error':'error',
-                     }
+                        'error': 'error',
+                    }
                 )
+
 
 def tag(request, tag_name):
     q = Question.objects.filter(tags__name__contains=tag_name)
@@ -84,20 +86,30 @@ def index(request):
 
 
 def question(request, question_id):
-    q = get_object_or_404(Question, pk=question_id)
-    a = q.answer_set.all()
-    answer_list = paginator(request, a, 2)
-    ctx = {}
-    return render(
-        request,
-        'ask/question.html', {
-            'question': q,
-            'answer_list': answer_list,
-            'tags': Tag.objects.besters(),
-            'question_list': answer_list,
-            'users': Author.objects.all(),
-        }
-    )
+    if request.method == "GET":
+        q = get_object_or_404(Question, pk=question_id)
+        a = q.answer_set.all()
+        answer_list = paginator(request, a, 2)
+        form = answerform()
+        return render(
+            request,
+            'ask/question.html', {
+                'question': q,
+                'answer_list': answer_list,
+                'tags': Tag.objects.besters(),
+                'question_list': answer_list,
+                'users': Author.objects.all(),
+                'form': form,
+            }
+        )
+    if request.method == "POST":
+        q = get_object_or_404(Question, pk=question_id)
+        form = answerform(request.POST)
+        if form.is_valid:
+            a = Answer(question=q, text=form.cleaned_data['text'], title=form.cleaned_data['title'],
+                       user=request.user, correct=False, pub_date=timezone.now())
+            a.save()
+            return HttpResponseRedirect(reverse('ask:question', kwargs={'question_id': question_id}))
 
 
 def base(request):
@@ -108,6 +120,7 @@ def base(request):
             'users': Author.objects.all(),
         }
     )
+
 
 @login_required
 def ask(request):
@@ -121,10 +134,8 @@ def ask(request):
             for tg in form.cleaned_data['tag']:
                 Tag.objects.get_or_create(name=tg)
                 q.tags.add(Tag.objects.get(name=tg))
-                qid=q.id
+                qid = q.id
             return HttpResponseRedirect(reverse('ask:question', kwargs={'question_id': qid}))
-        else:
-            form = questionform()
     return render(
         request,
         'ask/question_create.html',
@@ -132,15 +143,17 @@ def ask(request):
             'form': form,
             'users': Author.objects.all(),
             'tags': Tag.objects.besters(),
+
         }
     )
+
 
 @login_required
 def settings(request):
     if request.method == "GET":
-        form=SettingForm(request.user,initial={'nickname':request.user.author.nickname ,
-                                               'email':request.user.email,'user':request.user})
-        form.user=request.user
+        form = SettingForm(request.user, initial={'nickname': request.user.author.nickname,
+                                                  'email': request.user.email, 'user': request.user})
+        form.user = request.user
         return render(
             request,
             'ask/settings.html', {
@@ -150,13 +163,11 @@ def settings(request):
             }
         )
     if request.method == "POST":
-        form = SettingForm(request.user.author,data=request.POST, files=request.FILES)
-        print("tttt")
+        form = SettingForm(request.user.author, data=request.POST, files=request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect(reverse('ask:index'))
         else:
-            print("errr")
             form = SettingForm(request.user)
         return render(
             request,
@@ -166,45 +177,46 @@ def settings(request):
                 'users': Author.objects.all(),
                 'tags': Tag.objects.besters(),
             }
-    )
+        )
 
-#ВАЖНО СПРОСИТЬ из тегов не верный запрос на картинки идет!!!
+
+# ВАЖНО СПРОСИТЬ из тегов не верный запрос на картинки идет!!!
 
 class RView(View):
 
-    def get(self,request,**kwargs):
+    def get(self, request, **kwargs):
         if request.user.is_authenticated:
             return HttpResponseRedirect(reverse('ask:index'))
         form = kwargs.get('form', RegistrationForm())
         return render(
             request,
-            'registration.html',{
-            'tags': Tag.objects.besters(),
-            'users': Author.objects.all(),
-            'form':form,
+            'registration.html', {
+                'tags': Tag.objects.besters(),
+                'users': Author.objects.all(),
+                'form': form,
             }
         )
 
-    def post(self,request):
+    def post(self, request):
         form = RegistrationForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             u = form.save()
             a = u.author
             a.nickname = form.cleaned_data['nickname']
-            #a.avatar=request.FILES
+            # a.avatar=request.FILES
 
             a.save()
             print(a)
             # print()
             # print(Author.objects.all())
-            login(request,u)
+            login(request, u)
 
             return HttpResponseRedirect(reverse('ask:index'))
         else:
             return self.get(request, form=form)
 
 
-#неготовая часть
+# неготовая часть
 def like(request, object_id, like_val, typ_obj):
     if typ_obj != '0':
         q = get_object_or_404(Question, pk=object_id)

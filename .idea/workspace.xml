@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="registration &amp; settings - 4/5 Done">
-      <change beforePath="$PROJECT_DIR$/.idea/TPark_WEB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TPark_WEB.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/management/commands/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/management/commands/generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/render_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/render_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/settings.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question_create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/site33/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/site33/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -362,7 +357,7 @@
       <workItem from="1576595774240" duration="1989000" />
       <workItem from="1576601497684" duration="2925000" />
       <workItem from="1576864383854" duration="1377000" />
-      <workItem from="1577190368777" duration="6401000" />
+      <workItem from="1577190368777" duration="10545000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
@@ -574,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575978905957</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="upload img">
+      <created>1577198136644</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1577198136644</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +616,8 @@
     <MESSAGE value="LikeDislike with backup system" />
     <MESSAGE value="Login\Logout added" />
     <MESSAGE value="registration &amp; settings - 4/5 Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="registration &amp; settings - 4/5 Done" />
+    <MESSAGE value="upload img" />
+    <option name="LAST_COMMIT_MESSAGE" value="upload img" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Notifications" timestamp="1575736336350">
@@ -625,56 +628,60 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="113" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1577197869603" />
-    <state x="260" y="55" key="CommitChangelistDialog2" timestamp="1577198094723">
+    <state x="260" y="55" key="CommitChangelistDialog2" timestamp="1577198135761">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="260" y="55" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1577198094723" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1577198016383">
+    <state x="260" y="55" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1577198135761" />
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1577202392876">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1577198016383" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1577198016374">
+    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1577202392876" />
+    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1577202392873">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1577198016374" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1577198016372">
+    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1577202392873" />
+    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1577202392872">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1577198016372" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1577198016377">
+    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1577202392872" />
+    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1577202392874">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1577198016377" />
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1577197437375">
+    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1577202392874" />
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom" timestamp="1577202292335">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1577197437375" />
-    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1577197437373">
+    <state width="1398" height="303" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1577202292335" />
+    <state width="1398" height="303" key="GridCell.Tab.1.center" timestamp="1577202292333">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1577197437373" />
-    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1577197437372">
+    <state width="1398" height="303" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1577202292333" />
+    <state width="1398" height="303" key="GridCell.Tab.1.left" timestamp="1577202292331">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1577197437372" />
-    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1577197437374">
+    <state width="1398" height="303" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1577202292331" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right" timestamp="1577202292334">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1577197437374" />
+    <state width="1398" height="303" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1577202292334" />
     <state x="228" y="89" key="SettingsEditor" timestamp="1577197004405">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="228" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1577197004405" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1575913414754">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1577198201689">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1575913414754" />
-    <state x="376" y="260" key="com.intellij.ide.util.TipDialog" timestamp="1576601497645">
-      <screen x="0" y="23" width="1440" height="808" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1577198201689" />
+    <state x="376" y="264" key="com.intellij.ide.util.TipDialog" timestamp="1577446243515">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="376" y="264" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1576595774089" />
+    <state x="376" y="264" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1577446243515" />
     <state x="376" y="259" key="com.intellij.ide.util.TipDialog/0.23.1440.804@0.23.1440.804" timestamp="1575385139374" />
     <state x="376" y="260" key="com.intellij.ide.util.TipDialog/0.23.1440.808@0.23.1440.808" timestamp="1576601497645" />
+    <state x="404" y="250" key="git4idea.merge.GitPullDialog" timestamp="1577198143637">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="404" y="250" key="git4idea.merge.GitPullDialog/0.0.1440.900@0.0.1440.900" timestamp="1577198143637" />
     <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1576595931494">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -685,28 +692,43 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
-          <line>154</line>
+          <line>167</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
-          <line>155</line>
+          <line>168</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
-          <line>157</line>
+          <line>170</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
-          <line>158</line>
+          <line>171</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
+          <line>106</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
+          <line>107</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
+          <line>108</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
