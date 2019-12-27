@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question_create.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question_create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
-    </list>
+    <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -358,6 +350,7 @@
       <workItem from="1576601497684" duration="2925000" />
       <workItem from="1576864383854" duration="1377000" />
       <workItem from="1577190368777" duration="10545000" />
+      <workItem from="1577446242999" duration="263000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
@@ -576,7 +569,21 @@
       <option name="project" value="LOCAL" />
       <updated>1577198136644</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="full tpark without JS">
+      <created>1577446301390</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1577446301390</updated>
+    </task>
+    <task id="LOCAL-00033" summary="full tpark without JS">
+      <created>1577446480092</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1577446480092</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +624,8 @@
     <MESSAGE value="Login\Logout added" />
     <MESSAGE value="registration &amp; settings - 4/5 Done" />
     <MESSAGE value="upload img" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload img" />
+    <MESSAGE value="full tpark without JS" />
+    <option name="LAST_COMMIT_MESSAGE" value="full tpark without JS" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Notifications" timestamp="1575736336350">
@@ -628,10 +636,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="184" y="113" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1577197869603" />
-    <state x="260" y="55" key="CommitChangelistDialog2" timestamp="1577446300871">
+    <state x="260" y="55" key="CommitChangelistDialog2" timestamp="1577446513497">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="260" y="55" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1577446300871" />
+    <state x="260" y="55" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1577446513497" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1577202392876">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -697,23 +705,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
-          <line>167</line>
+          <line>166</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
-          <line>168</line>
+          <line>167</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
-          <line>170</line>
+          <line>169</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
-          <line>171</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mysite/ask/views.py</url>
