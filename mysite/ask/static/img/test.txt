@@ -1,0 +1,2 @@
+docker container run -v $(pwd)/etc/nginx.conf:/etc/nginx/sites-enabled/default -v
+$(pwd):/opt/askme -p 80:80 -it askme bash

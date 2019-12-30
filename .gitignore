@@ -1,4 +1,6 @@
 # Default ignored files
 /workspace.xml
 /myvenv
+/mysite/venv
+/mysite/ask/media
 .DS_Store
