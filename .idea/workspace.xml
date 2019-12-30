@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="" />
+    <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/mysite/ask/media/images/avatars/EJ7BKJ5WkAEF5Pv.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/ask/media/images/avatars/Снимок_экрана_2019-11-23_в_12.03.07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/ask/media/images/avatars/Снимок_экрана_2019-11-23_в_12.03.07_kZTeLBA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mysite/ask/media/images/avatars/Снимок_экрана_2019-12-23_в_21.34.17.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/db.sqlite3" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -351,6 +359,7 @@
       <workItem from="1576864383854" duration="1377000" />
       <workItem from="1577190368777" duration="10545000" />
       <workItem from="1577446242999" duration="263000" />
+      <workItem from="1577724148263" duration="788000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
@@ -632,10 +641,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="117" key="#Notifications/0.0.1440.900@0.0.1440.900" timestamp="1575736336350" />
-    <state x="184" y="113" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577197869603">
+    <state x="184" y="113" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577724187612">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="184" y="113" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1577197869603" />
+    <state x="184" y="113" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.900@0.0.1440.900" timestamp="1577724187612" />
     <state x="260" y="55" key="CommitChangelistDialog2" timestamp="1577446513497">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -680,10 +689,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1577446314783" />
-    <state x="376" y="264" key="com.intellij.ide.util.TipDialog" timestamp="1577446243515">
+    <state x="376" y="264" key="com.intellij.ide.util.TipDialog" timestamp="1577724162518">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="376" y="264" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1577446243515" />
+    <state x="376" y="264" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1577724162518" />
     <state x="376" y="259" key="com.intellij.ide.util.TipDialog/0.23.1440.804@0.23.1440.804" timestamp="1575385139374" />
     <state x="376" y="260" key="com.intellij.ide.util.TipDialog/0.23.1440.808@0.23.1440.808" timestamp="1576601497645" />
     <state x="404" y="250" key="git4idea.merge.GitPullDialog" timestamp="1577198143637">
