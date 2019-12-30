@@ -63,10 +63,14 @@ WSGI_APPLICATION = 'site33.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+               'default': {
+                    'ENGINE': 'django.db.backends.mysql',
+                    'NAME': 'askme',
+                    'USER': 'root',
+                    'PASSWORD': 'coololeg1999',
+                    'HOST': '0.0.0.0', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+                    'PORT': '', # Set to empty string for default.
+       }
 }
 
 
