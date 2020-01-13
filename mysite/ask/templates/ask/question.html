@@ -1,10 +1,12 @@
 {% extends './base.html' %}
 
+{% load static %}
+
 {% block content %}
 <main role="main" class="container-fluid m-5">
     <div class="container-fluid" style="margin-top: 0px">
         <div>
-            <div class="row">
+            <div class="row col-7">
                 {% include "post.html" %}
                 {% for answer in answer_list%}
                 <div class="row" style="border: 3px solid red; width: 70%;margin-left: 0%">
@@ -15,10 +17,10 @@
                             <div class="btn-group-vertical" style="margin-right: 50px">
                                 <button  onmouseover="this.style.backgroundColor='green'"; onmouseout="this.style.backgroundColor='white'" ;
                                          style="height: 25px; width: 90%;">
-                                    <a href="{% url 'ask:like' answer.id 1 0 %}">▲</a></button>
+                                    <p>▲</p></button>
                                 <button onmouseover="this.style.backgroundColor='red'"; onmouseout="this.style.backgroundColor='white'" ;
                                         style="height: 25px; width: 90%;" >
-                                    <a href="{% url 'ask:like' answer.id 0 0 %}">▼</a></button>
+                                    <p>▼</p></button>
                             </div>
                         </div>
                     </div>
@@ -51,5 +53,7 @@
 </form>
     </div>
     {% include "paginator.html" %}
+  <script src="{% static '/js/buttons.js' %}"></script>
+
 </main>
 {% endblock %}

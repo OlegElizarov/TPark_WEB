@@ -1,4 +1,6 @@
-        <div class="col col-2" style="border: 3px solid;border-color:darkviolet ;border-right: none">
+{% load static %}
+
+        <div class="col col-4" style="border: 3px solid;border-color:darkviolet ;border-right: none">
          <a class="blog-post" href="#"><img src="{{question.author.avatar.url}}" width="60" height="60" style="margin: 10px"></a><br>
 
            <div class="btn-group" style="margin-top: 10%">
@@ -15,7 +17,7 @@
           </div>
         </div>
         </div>
-        <div class="col col-7" style="border: 3px solid;border-color:darkviolet">
+        <div class="col col-8" style="border: 3px solid;border-color:darkviolet">
         <div class="blog-post">
         <h2><a style="color: darkviolet" href="{% url 'ask:question' question.id %}">{{question.title}}</a></h2>
         <p class="blog-post-meta">{{question.pub_date}}
@@ -32,3 +34,4 @@
             </p>
       </div><!-- /.blog-post -->
 </div>
+  <script src="{% static '/js/buttons.js' %}"></script>

@@ -4,6 +4,12 @@
     <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/static/js/buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/static/js/buttons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/ask.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/templates/ask/tag.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -359,7 +365,7 @@
       <workItem from="1577190368777" duration="10545000" />
       <workItem from="1577446242999" duration="263000" />
       <workItem from="1577724148263" duration="6479000" />
-      <workItem from="1578908627275" duration="6870000" />
+      <workItem from="1578908627275" duration="8842000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
@@ -627,7 +633,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578914849432</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="AJAX likes are made&#10;Rendering and obj_type - problems">
+      <created>1578916044026</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1578916044026</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +660,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Login+logout+paginator_base" />
     <MESSAGE value="first models in tags" />
     <MESSAGE value="questions+tags(without tags model)+index with models" />
     <MESSAGE value="correct tags and answers" />
@@ -672,7 +684,8 @@
     <MESSAGE value="new DB is MYSQL" />
     <MESSAGE value="Answer is correct" />
     <MESSAGE value="AJAX first step" />
-    <option name="LAST_COMMIT_MESSAGE" value="AJAX first step" />
+    <MESSAGE value="AJAX likes are made&#10;Rendering and obj_type - problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="AJAX likes are made&#10;Rendering and obj_type - problems" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Notifications" timestamp="1575736336350">
@@ -687,10 +700,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="445" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1577737326392" />
-    <state x="250" y="55" key="CommitChangelistDialog2" timestamp="1578914849044">
+    <state x="250" y="55" key="CommitChangelistDialog2" timestamp="1578916043770">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="250" y="55" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578914849044" />
+    <state x="250" y="55" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1578916043770" />
     <state width="1398" height="303" key="GridCell.Tab.0.bottom" timestamp="1578915957724">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -731,10 +744,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="228" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1577197004405" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1578914855677">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1578916049607">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1578914855677" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1578916049607" />
     <state x="376" y="264" key="com.intellij.ide.util.TipDialog" timestamp="1577724162518">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

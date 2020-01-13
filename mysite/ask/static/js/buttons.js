@@ -1,8 +1,8 @@
 
 $("button").click(function(){
-    $method = $(this).attr('id');
-    $post_id= $(this).attr('name');
-    $url = "/like";
+    let $method = $(this).attr('id');
+    let $post_id = $(this).attr('name');
+    let $url = "/like";
 
       $.ajax({
                type: "POST",

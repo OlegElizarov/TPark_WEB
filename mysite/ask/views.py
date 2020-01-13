@@ -224,7 +224,7 @@ class RView(View):
 @require_POST
 def like(request):
     post = request.POST.get('post', None)
-    obj = get_object_or_404(Question, id=int(post))
+    obj = get_object_or_404(Question, id=post)
     method = request.POST.get('method', None)
     ctx = {'message': 'OK'}
     print(method)
