@@ -16,6 +16,5 @@ urlpatterns = [
     url(r'^registration', views.RView.as_view(), name='registration'),
     url(r'^login', views.logged_in, name='login'),
     url(r'^logout', views.logged_out, name='logout'),
-    url(r'^question/(?P<object_id>\d+)/(?P<like_val>\d+)/(?P<typ_obj>\d+)/$', views.like, name='like'),
-
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^like', views.like, name='like'),
+              ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

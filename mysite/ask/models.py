@@ -17,7 +17,7 @@ class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,)
     nickname = models.CharField(max_length=255)
     avatar = models.ImageField(upload_to='images/avatars/',
-                               default='images/avatars/fffzRA7cwYA.jpg')
+                               default='images/avatars/fffzRA7cwYA.jpg' )
 
     def __str__(self):
         return self.nickname

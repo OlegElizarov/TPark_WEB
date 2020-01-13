@@ -1,8 +1,6 @@
 {% extends './base.html' %}
 
 {% block content %}
-    <script src="../../static/js/buttons.js">
-    </script>
   <main role="main" class="container-fluid m-5">
   <div class="row">
     <div class="col-md-8 col-sm-8 blog-main">
@@ -12,11 +10,14 @@
       </h3>
     </div>
 {% for question in question_list %}
+    <form method="post">
+    {% csrf_token %}
       <div class="container-fluid" style="margin-top: 0px">
           <div class="row">
               {% include "post.html" %}
           </div>
       </div>
+    </form>
       {% endfor %}
       {% include "paginator.html" %}
   </div>

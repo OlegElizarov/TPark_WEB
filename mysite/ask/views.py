@@ -1,8 +1,10 @@
+from django.views.decorators.csrf import csrf_protect, csrf_exempt
 from django.views.generic import View
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.http import HttpResponse
+import json
 from ask.models import Question, Answer, Tag, QuestionManager, TagManager, Author, LikeDislike
 from django.contrib.auth.models import User
 from .forms import questionform, RegistrationForm, SettingForm, answerform
@@ -217,37 +219,45 @@ class RView(View):
 
 
 # неготовая часть
-def like(request, object_id, like_val, typ_obj):
-    if typ_obj != '0':
-        q = get_object_or_404(Question, pk=object_id)
-        if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), question=q,
-                                       like_type=int(like_val)).count() == 0):
-            if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), question=q,
-                                           like_type=(int(like_val)) ^ 1).count() != 0):
-                LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), question=q,
-                                           like_type=(int(like_val)) ^ 1).delete()
-                q.rating = q.rating - 1 + 2 * int(like_val)
-            LikeDislike.objects.create(author=get_object_or_404(Author, user=request.user), question=q,
-                                       like_type=int(like_val))
-            q.rating = q.rating - 1 + 2 * int(like_val)
-            q.save()
-        return HttpResponseRedirect(reverse('ask:index'))
-    else:
-        a = get_object_or_404(Answer, pk=object_id)
-        if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), answer=a,
-                                       like_type=int(like_val)).count() == 0):
-            if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), answer=a,
-                                           like_type=(int(like_val)) ^ 1).count() != 0):
-                LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), answer=a,
-                                           like_type=(int(like_val)) ^ 1).delete()
-                a.rating = a.rating - 1 + 2 * int(like_val)
-            LikeDislike.objects.create(author=get_object_or_404(Author, user=request.user), answer=a,
-                                       like_type=int(like_val))
-            a.rating = a.rating - 1 + 2 * int(like_val)
-            a.save()
-        q = a.question
-        q = q.id
-        return HttpResponseRedirect(reverse('ask:question', kwargs={'question_id': q}))
+@csrf_exempt
+def like(request):
+    post = request.POST.get('post', None)
+    val = request.POST.get('val', None)
+    message = val
+    print(post)
+    print(val)
+    ctx = {'message': message}
+    return HttpResponse(json.dumps(ctx), content_type='application/json')
+    # if typ_obj != '0':
+    #     q = get_object_or_404(Question, pk=object_id)
+    #     if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), question=q,
+    #                                    like_type=int(like_val)).count() == 0):
+    #         if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), question=q,
+    #                                        like_type=(int(like_val)) ^ 1).count() != 0):
+    #             LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), question=q,
+    #                                        like_type=(int(like_val)) ^ 1).delete()
+    #             q.rating = q.rating - 1 + 2 * int(like_val)
+    #         LikeDislike.objects.create(author=get_object_or_404(Author, user=request.user), question=q,
+    #                                    like_type=int(like_val))
+    #         q.rating = q.rating - 1 + 2 * int(like_val)
+    #         q.save()
+    #     return HttpResponseRedirect(reverse('ask:index'))
+    # else:
+    #     a = get_object_or_404(Answer, pk=object_id)
+    #     if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), answer=a,
+    #                                    like_type=int(like_val)).count() == 0):
+    #         if (LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), answer=a,
+    #                                        like_type=(int(like_val)) ^ 1).count() != 0):
+    #             LikeDislike.objects.filter(author=get_object_or_404(Author, user=request.user), answer=a,
+    #                                        like_type=(int(like_val)) ^ 1).delete()
+    #             a.rating = a.rating - 1 + 2 * int(like_val)
+    #         LikeDislike.objects.create(author=get_object_or_404(Author, user=request.user), answer=a,
+    #                                    like_type=int(like_val))
+    #         a.rating = a.rating - 1 + 2 * int(like_val)
+    #         a.save()
+    #     q = a.question
+    #     q = q.id
+    #     return HttpResponseRedirect(reverse('ask:question', kwargs={'question_id': q}))
 
 # request.GET.get('r')
 # Response.objects.filter(pk=r).first()
