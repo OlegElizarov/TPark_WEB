@@ -1,4 +1,5 @@
 from django.views.decorators.csrf import csrf_protect, csrf_exempt
+from django.views.decorators.http import require_POST
 from django.views.generic import View
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, render
@@ -220,13 +221,23 @@ class RView(View):
 
 # неготовая часть
 @csrf_exempt
+@require_POST
 def like(request):
     post = request.POST.get('post', None)
-    val = request.POST.get('val', None)
-    message = val
+    obj = get_object_or_404(Question, id=int(post))
+    method = request.POST.get('method', None)
+    ctx = {'message': 'OK'}
+    print(method)
     print(post)
-    print(val)
-    ctx = {'message': message}
+    print(obj)
+    if (method == 'like'):
+        obj.rating += 1
+    else:
+        if (method == 'dislike'):
+            obj.rating -= 1
+        else:
+            ctx = {'message': 'error_method'}
+    obj.save()
     return HttpResponse(json.dumps(ctx), content_type='application/json')
     # if typ_obj != '0':
     #     q = get_object_or_404(Question, pk=object_id)
