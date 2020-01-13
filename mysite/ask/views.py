@@ -105,9 +105,9 @@ def question(request, question_id):
     if request.method == "POST":
         q = get_object_or_404(Question, pk=question_id)
         form = answerform(request.POST)
-        if form.is_valid:
+        if form.is_valid():
             a = Answer(question=q, text=form.cleaned_data['text'], title=form.cleaned_data['title'],
-                       user=request.user, correct=False, pub_date=timezone.now())
+                       author=request.user.author, correct=False, pub_date=timezone.now())
             a.save()
             return HttpResponseRedirect(reverse('ask:question', kwargs={'question_id': question_id}))
 

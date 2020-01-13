@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3968e5b2-0608-4494-86c5-41beeb22d0af" name="Default Changelist" comment="commit for db">
-      <change afterPath="$PROJECT_DIR$/mysite/ask/media/images/avatars/Снимок_экрана_2019-11-23_в_12.03.07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/ask/media/images/avatars/Снимок_экрана_2019-11-23_в_12.03.07_kZTeLBA.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysite/ask/media/images/avatars/Снимок_экрана_2019-12-23_в_21.34.17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0002_auto_20191022_1913.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0003_auto_20191029_1531.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0004_answer_author.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0005_answer_pub_date.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0006_auto_20191029_2334.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0007_auto_20191029_2338.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0008_author.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0009_author_nickname.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0010_auto_20191103_1408.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0011_likedislike.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/ask/migrations/0012_auto_20191104_2001.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/ask/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/ask/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/site33/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/site33/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,17 +291,7 @@
       <list>
         <serviceView>
           <treeState>
-            <expand>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="root:@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="com.intellij.database.console.session.MessageBusSession@38c881c9" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </treeState>
         </serviceView>
@@ -385,7 +357,8 @@
       <workItem from="1576864383854" duration="1377000" />
       <workItem from="1577190368777" duration="10545000" />
       <workItem from="1577446242999" duration="263000" />
-      <workItem from="1577724148263" duration="6373000" />
+      <workItem from="1577724148263" duration="6479000" />
+      <workItem from="1578908627275" duration="888000" />
     </task>
     <task id="LOCAL-00001" summary="best templates">
       <created>1571659958732</created>
@@ -632,7 +605,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577728741897</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="new DB is MYSQL">
+      <created>1577738213436</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1577738213436</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +656,8 @@
     <MESSAGE value="full tpark without JS" />
     <MESSAGE value="commit for db" />
     <MESSAGE value="text for nginx" />
-    <option name="LAST_COMMIT_MESSAGE" value="text for nginx" />
+    <MESSAGE value="new DB is MYSQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="new DB is MYSQL" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Notifications" timestamp="1575736336350">
@@ -691,10 +672,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="445" y="260" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.900@0.0.1440.900" timestamp="1577737326392" />
-    <state x="260" y="55" key="CommitChangelistDialog2" timestamp="1577728741623">
+    <state x="250" y="55" key="CommitChangelistDialog2" timestamp="1577738213169">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="260" y="55" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1577728741623" />
+    <state x="250" y="55" key="CommitChangelistDialog2/0.0.1440.900@0.0.1440.900" timestamp="1577738213169" />
     <state width="958" height="245" key="GridCell.Tab.0.bottom" timestamp="1577734765711">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -731,10 +712,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="228" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1577197004405" />
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1577728750048">
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2" timestamp="1577738242259">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1577728750048" />
+    <state x="320" y="191" key="Vcs.Push.Dialog.v2/0.0.1440.900@0.0.1440.900" timestamp="1577738242259" />
     <state x="376" y="264" key="com.intellij.ide.util.TipDialog" timestamp="1577724162518">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
